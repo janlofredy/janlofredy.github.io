@@ -24,6 +24,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build and Deploy
+    steps:
     - name: Nuxt3 to Github Pages
       # You may pin to the exact commit or the version.
       # uses: khanshifaul/NuxtPagesAction@d6f11be3457d3670cf43921137516f3f1e5b08f2
