@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
     ssr:false,
     target: "static",
+    generate:{
+        nojekyll: true, //not working on this version
+        fallback: '404.html',
+    },
     modules: [
         '@nuxtjs/tailwindcss'
     ],
