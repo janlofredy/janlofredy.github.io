@@ -3,5 +3,17 @@ export default defineNuxtConfig({
     ssr:false,
     modules: [
         '@nuxtjs/tailwindcss'
-    ]
+    ],
+    app: {
+        head: {
+            title: 'Jose Janlofre Dy',
+            htmlAttrs: {
+                lang: 'en',
+            },
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+            ],
+        },
+    },
 })
