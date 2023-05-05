@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtWelcome />
+    Pls Gib Moni
   </div>
 </template>

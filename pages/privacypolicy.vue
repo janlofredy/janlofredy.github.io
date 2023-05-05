@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtWelcome />
+    WEBSITE PRIVACY POLICY
   </div>
 </template>

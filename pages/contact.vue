@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtWelcome />
+    HOW TO CONTACT
   </div>
 </template>
