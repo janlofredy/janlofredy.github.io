@@ -3,11 +3,13 @@ import {
     Scene,
     PerspectiveCamera,
     Mesh,
-    MeshBasicMaterial,
+    MeshDepthMaterial,
     WebGLRenderer,
     SphereGeometry,
+    BoxGeometry,
     Color,
     Fog,
+    AmbientLight,
     GridHelper
 } from "three"
 import { PointerLockControls } from "three/addons/controls/PointerLockControls.js"
@@ -25,41 +27,77 @@ const bgColor = new Color("#CCFBF1")
 scene.fog = new Fog(bgColor, 0.1, 75)
 scene.background = bgColor
 
+const light = new AmbientLight(0x4F4F4F, 1)
+scene.add(light)
+
 const camera = new PerspectiveCamera(75, displayAspectRatio, 0.1, 1000)
 camera.position.set(0, 2, 0)
 scene.add(camera)
 
+let myChar: PointerLockControls
+
 const size = 100
 const divisions = 500
-let myChar: PointerLockControls
 const gridHelper = new GridHelper(size, divisions)
 scene.add(gridHelper)
 
 const sphere = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshBasicMaterial({ color: 0xFF0000 })
+    new MeshDepthMaterial({ opacity: 1 })
 )
 sphere.position.set(0, 2, -10)
 scene.add(sphere)
 const sphere2 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshBasicMaterial({ color: 0xFF0000 })
+    new MeshDepthMaterial({ opacity: 1 })
 )
 sphere2.position.set(0, 2, 10)
 scene.add(sphere2)
 
 const sphere3 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshBasicMaterial({ color: 0xFF0000 })
+    new MeshDepthMaterial({ opacity: 1 })
 )
 sphere3.position.set(-10, 2, 0)
 scene.add(sphere3)
 const sphere4 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshBasicMaterial({ color: 0xFF0000 })
+    new MeshDepthMaterial({ opacity: 1 })
 )
 sphere4.position.set(10, 2, 0)
 scene.add(sphere4)
+
+const boxy = new Mesh(
+    new BoxGeometry(1, 1, 1),
+    new MeshDepthMaterial({ opacity: 1 })
+)
+boxy.position.set(0, 2, -1)
+scene.add(boxy)
+const box = new Mesh(
+    new BoxGeometry(1, 1, 1),
+    new MeshDepthMaterial({ opacity: 1 })
+)
+box.position.set(10, 2, -10)
+scene.add(box)
+const box2 = new Mesh(
+    new BoxGeometry(1, 1, 1),
+    new MeshDepthMaterial({ opacity: 1 })
+)
+box2.position.set(-10, 2, 10)
+scene.add(box2)
+
+const box3 = new Mesh(
+    new BoxGeometry(1, 1, 1),
+    new MeshDepthMaterial({ opacity: 1 })
+)
+box3.position.set(-10, 2, -10)
+scene.add(box3)
+const box4 = new Mesh(
+    new BoxGeometry(1, 1, 1),
+    new MeshDepthMaterial({ opacity: 1 })
+)
+box4.position.set(10, 2, 10)
+scene.add(box4)
 
 const setRenderer = () => {
     if (myCanvas.value) {
@@ -115,6 +153,16 @@ let flyMode = false
 // const yLimit = -0.75
 // const sphereLimit = -25
 const loop = () => {
+    box.rotation.y -= 0.025
+    box2.rotation.y -= 0.025
+    box3.rotation.y -= 0.025
+    box4.rotation.y -= 0.025
+    box.rotation.x -= 0.025
+    box2.rotation.x -= 0.025
+    box3.rotation.x -= 0.025
+    box4.rotation.x -= 0.025
+    boxy.rotation.y -= 0.025
+    boxy.rotation.x -= 0.025
     // myChar.update(1.0)
     // if (sphere.position.z > sphereLimit) {
     //     sphere.position.z -= 0.1
@@ -151,24 +199,24 @@ const loop = () => {
     // window.console.log(minZrot)
     // window.console.log(maxZrot)
     if (moveForward) {
-        myChar.moveForward(0.5)
+        myChar.moveForward(0.175)
     }
     if (moveBack) {
-        myChar.moveForward(-0.5)
+        myChar.moveForward(-0.175)
     }
     if (moveRight) {
-        myChar.moveRight(0.5)
+        myChar.moveRight(0.175)
     }
     if (moveLeft) {
-        myChar.moveRight(-0.5)
+        myChar.moveRight(-0.175)
     }
     if (moveUp) {
-        currentHeight += 0.5
+        currentHeight += 0.175
     }
     if (moveUp && !flyMode) {
-        currentHeight += 0.5
+        currentHeight += 0.175
     } else if (moveDown || !flyMode) {
-        currentHeight -= 0.5
+        currentHeight -= 0.175
         if (currentHeight < floor) {
             currentHeight = 2
         }
