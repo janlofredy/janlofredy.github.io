@@ -5,8 +5,8 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxtjs/google-adsense',
     ],
-     'google-adsense': {
-        id: 'ca-pub-3178142439196865'
+    'google-adsense': {
+        id: 'ca-pub-3178142439196865',
     },
     plugins: [
         '~/plugins/aos.client.js',
