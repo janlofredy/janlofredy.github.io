@@ -1,5 +1,5 @@
 <template>
-  <div>
-    Pls Gib Moni
-  </div>
+    <div>
+        Pls Gib Moni
+    </div>
 </template>

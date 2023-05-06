@@ -1,5 +1,5 @@
 <template>
-  <div>
-    WEBSITE PRIVACY POLICY
-  </div>
+    <div>
+        WEBSITE PRIVACY POLICY
+    </div>
 </template>
