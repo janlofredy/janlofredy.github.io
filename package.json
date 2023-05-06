@@ -20,6 +20,7 @@
   "dependencies": {
     "@nuxtjs/google-adsense": "^2.1.0",
     "aos": "^2.3.4",
-    "three": "^0.152.2"
+    "three": "^0.152.2",
+    "three-addons": "^1.2.0"
   }
 }

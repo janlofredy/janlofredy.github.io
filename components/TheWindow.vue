@@ -7,8 +7,10 @@ import {
     WebGLRenderer,
     SphereGeometry,
     Color,
-    Fog
+    Fog,
+    GridHelper
 } from "three"
+import { PointerLockControls } from "three/addons/controls/PointerLockControls.js"
 import { Ref } from "vue"
 import { useWindowSize } from "@vueuse/core"
 
@@ -24,21 +26,40 @@ scene.fog = new Fog(bgColor, 0.1, 75)
 scene.background = bgColor
 
 const camera = new PerspectiveCamera(75, displayAspectRatio, 0.1, 1000)
-camera.position.set(0, 0, 4)
+camera.position.set(0, 2, 0)
 scene.add(camera)
+
+const size = 100
+const divisions = 500
+let myChar: PointerLockControls
+const gridHelper = new GridHelper(size, divisions)
+scene.add(gridHelper)
 
 const sphere = new Mesh(
     new SphereGeometry(1, 32, 32),
     new MeshBasicMaterial({ color: 0xFF0000 })
 )
-sphere.position.set(0, 0, 0)
+sphere.position.set(0, 2, -10)
 scene.add(sphere)
 const sphere2 = new Mesh(
     new SphereGeometry(1, 32, 32),
     new MeshBasicMaterial({ color: 0xFF0000 })
 )
-sphere2.position.set(0, 0, 10)
+sphere2.position.set(0, 2, 10)
 scene.add(sphere2)
+
+const sphere3 = new Mesh(
+    new SphereGeometry(1, 32, 32),
+    new MeshBasicMaterial({ color: 0xFF0000 })
+)
+sphere3.position.set(-10, 2, 0)
+scene.add(sphere3)
+const sphere4 = new Mesh(
+    new SphereGeometry(1, 32, 32),
+    new MeshBasicMaterial({ color: 0xFF0000 })
+)
+sphere4.position.set(10, 2, 0)
+scene.add(sphere4)
 
 const setRenderer = () => {
     if (myCanvas.value) {
@@ -62,6 +83,10 @@ const updateRenderer = () => {
 
 onMounted(() => {
     setRenderer()
+    myChar = new PointerLockControls(camera, renderer.domElement)
+    myChar.enabled = true
+    myChar.dragToLook = true
+    myChar.movementSpeed = 0.5
     loop()
 })
 watch(windowAspectRatio, () => {
@@ -69,12 +94,28 @@ watch(windowAspectRatio, () => {
     updateRenderer()
 })
 
-let mouseClickLocationX = 0
-let mouseClickLocationY = 0
-let dragging = false
+// let mouseClickLocationX = 0
+// let mouseClickLocationY = 0
+let maxXrot = 0
+let maxYrot = 0
+let minXrot = 0
+let minYrot = 0
+let maxZrot = 0
+let minZrot = 0
+// let dragging = false
+let currentHeight = 2
+const floor = 2
+let moveForward = false
+let moveLeft = false
+let moveBack = false
+let moveRight = false
+let moveUp = false
+let moveDown = false
+let flyMode = false
 // const yLimit = -0.75
 // const sphereLimit = -25
 const loop = () => {
+    // myChar.update(1.0)
     // if (sphere.position.z > sphereLimit) {
     //     sphere.position.z -= 0.1
     // }
@@ -82,46 +123,148 @@ const loop = () => {
     // window.console.log("Camera= " + camera.rotation.y)
     // window.console.log(mouseClickLocationX)
     // window.console.log(mouseClickLocationY)
+    if (minXrot < camera.rotation.x) {
+        minXrot = camera.rotation.x
+    }
+    if (maxXrot > camera.rotation.x) {
+        maxXrot = camera.rotation.x
+    }
+    if (minYrot < camera.rotation.y) {
+        minYrot = camera.rotation.y
+    }
+    if (maxYrot > camera.rotation.y) {
+        maxYrot = camera.rotation.y
+    }
+    if (minZrot < camera.rotation.z) {
+        minZrot = camera.rotation.z
+    }
+    if (maxZrot > camera.rotation.z) {
+        maxZrot = camera.rotation.z
+    }
+    // xrot = +-3.2;
+    // yrot = +-1.5;
+    // zrot = +-3.1
+    // window.console.log(minXrot)
+    // window.console.log(maxXrot)
+    // window.console.log(minYrot)
+    // window.console.log(maxYrot)
+    // window.console.log(minZrot)
+    // window.console.log(maxZrot)
+    if (moveForward) {
+        myChar.moveForward(0.5)
+    }
+    if (moveBack) {
+        myChar.moveForward(-0.5)
+    }
+    if (moveRight) {
+        myChar.moveRight(0.5)
+    }
+    if (moveLeft) {
+        myChar.moveRight(-0.5)
+    }
+    if (moveUp) {
+        currentHeight += 0.5
+    }
+    if (moveUp && !flyMode) {
+        currentHeight += 0.5
+    } else if (moveDown || !flyMode) {
+        currentHeight -= 0.5
+        if (currentHeight < floor) {
+            currentHeight = 2
+        }
+    }
+    camera.position.y = currentHeight
     camera.updateProjectionMatrix()
     renderer.render(scene, camera)
     requestAnimationFrame(loop)
 }
 window.addEventListener("keydown", (key) => {
     if (key.key === "w") {
-        camera.translateZ(-0.75)
+        moveForward = true
     }
     if (key.key === "s") {
-        camera.translateZ(0.75)
-    }
-    if (key.key === "a") {
-        camera.translateX(-0.75)
+        moveBack = true
     }
     if (key.key === "d") {
-        camera.translateX(0.75)
+        moveRight = true
+    }
+    if (key.key === "a") {
+        moveLeft = true
+    }
+    if (key.key === " ") {
+        moveUp = true
+    }
+    if (key.keyCode === 16) {
+        moveDown = true
     }
 })
-window.addEventListener("mousedown", (mouse) => {
-    if (!dragging) {
-        mouseClickLocationX = mouse.screenX
-        mouseClickLocationY = mouse.screenY
-        dragging = true
+let lastSpacePressedTime = 0
+const doublePressDelayMS = 500
+window.addEventListener("keyup", (key) => {
+    if (key.key === "w") {
+        moveForward = false
+    }
+    if (key.key === "s") {
+        moveBack = false
+    }
+    if (key.key === "d") {
+        moveRight = false
+    }
+    if (key.key === "a") {
+        moveLeft = false
+    }
+    if (key.key === " ") {
+        moveUp = false
+        const pressedNow = new Date()
+        if (pressedNow - lastSpacePressedTime <= doublePressDelayMS) {
+            flyMode = !flyMode
+            lastSpacePressedTime = pressedNow
+        }
+        lastSpacePressedTime = pressedNow
+    }
+    if (key.keyCode === 16) {
+        moveDown = false
+    }
+})
+window.addEventListener("dblclick", () => {
+    if (!myChar.isLocked) {
+        myChar.lock()
     }
     // window.console.log(mouse)
 })
-window.addEventListener("mouseup", () => {
-    dragging = false
-    // window.console.log(mouse)
-})
-window.addEventListener("mousemove", (mouse) => {
-    if (dragging) {
-        // window.console.log(mouse)
-        // window.console.log(mouseClickLocationY - mouse.screenY)
-        camera.rotateX((mouseClickLocationY - mouse.screenY) / 100)
-        camera.rotateY((mouseClickLocationX - mouse.screenX) / 100)
-        mouseClickLocationX = mouse.screenX
-        mouseClickLocationY = mouse.screenY
-    }
-})
+// window.addEventListener("mousedown", () => {
+//     if (!dragging) {
+//         // mouseClickLocationX = mouse.screenX
+//         // mouseClickLocationY = mouse.screenY
+//         dragging = true
+//     }
+//     // window.console.log(mouse)
+// })
+// window.addEventListener("mouseup", () => {
+//     dragging = false
+//     // window.console.log(mouse)
+// })
+// window.addEventListener("mousemove", () => {
+//     if (dragging) {
+//         // mouse
+
+//         // window.console.log(camera.rotation.x)
+//         // window.console.log(mouseClickLocationY - mouse.screenY)
+//         // window.console.log(mouseClickLocationX - mouse.screenX)
+//         const test = new Vector3(0, 0, 0)
+//         window.console.log(test)
+//         // if (camera.rotation.x <= 1 && (mouseClickLocationY - mouse.screenY) > 0) {
+//         // }
+//         // if (camera.rotation.x >= -1 && (mouseClickLocationY - mouse.screenY) < 0) {
+//         // }
+//         // camera.rotateOnAxis(new Vector3(1, 0, 0), (mouseClickLocationY - mouse.screenY) / 100)
+//         // camera.rotateOnWorldAxis(new Vector3(1, 0, 0), (mouseClickLocationY - mouse.screenY) / 100)
+//         // camera.rotateOnWorldAxis(new Vector3(0, 1, 0), (mouseClickLocationX - mouse.screenX) / 100)
+//         // mouseClickLocationX = mouse.screenX
+//         // mouseClickLocationY = mouse.screenY
+//         // camera.rotation.z = 0
+//     }
+// })
 
 </script>
 <template>
