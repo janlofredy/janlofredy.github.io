@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         '@nuxtjs/google-adsense',
     ],
      'google-adsense': {
-        id: 'ca-pub-#########'
+        id: 'ca-pub-3178142439196865'
     },
     plugins: [
         '~/plugins/aos.client.js',
@@ -21,18 +21,11 @@ export default defineNuxtConfig({
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' }
             ],
-            script: [
-                {
-                    async: true,
-                    src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3178142439196865",
-                    crossorigin: "anonymous",
-                },
-            ],
         },
     },
     publicRuntimeConfig: {
         'google-adsense': {
-            id: process.env.GOOGLE_ADSENSE_ID,
+            id: process.env.GOOGLE_ADSENSE_ID || 'ca-pub-3178142439196865',
             test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
         },
     },
