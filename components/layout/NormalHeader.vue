@@ -1,3 +1,11 @@
+<!-- Guide to use for Responsive NAV Bar -->
+<!-- https://github.com/serresebastien/Nuxt-Tailwind-Responsive-Navbar/blob/master/components/NavBar.vue -->
+<script setup>
+const isOpen = ref(false)
+const drawer = () => {
+    isOpen.value = !isOpen.value
+}
+</script>
 <template>
     <div class="flex flex-row justify-between">
         <NuxtLink to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
@@ -5,7 +13,22 @@
                 JOSE JANLOFRE
             </div>
         </NuxtLink>
-        <div class="flex flex-row items-center justify-center">
+        <div class="block md:hidden">
+            <button class="p-2" @click="drawer()">
+                <svg
+                    class="h-8 w-8 fill-current text-black"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div class="hidden md:flex flex-row items-center justify-center">
             <NuxtLink to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
                 <div class="p-5">
                     Home
@@ -29,11 +52,6 @@
             <NuxtLink to="/donate" class="hover:bg-teal-100 dark:hover:bg-teal-900">
                 <div class="p-5">
                     Donate
-                </div>
-            </NuxtLink>
-            <NuxtLink to="/practice/threedy" class="hover:bg-teal-100 dark:hover:bg-teal-900">
-                <div class="p-5">
-                    3D Practice App
                 </div>
             </NuxtLink>
         </div>

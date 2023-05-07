@@ -75,7 +75,7 @@ const boxy = new Mesh(
     new BoxGeometry(1, 1, 1),
     new MeshPhongMaterial({ color: 0xA855F7 })
 )
-boxy.position.set(0, 2, -1)
+boxy.position.set(0, 2, 0)
 scene.add(boxy)
 const box = new Mesh(
     new BoxGeometry(1, 1, 1),
