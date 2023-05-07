@@ -3,12 +3,13 @@ import {
     Scene,
     PerspectiveCamera,
     Mesh,
-    MeshDepthMaterial,
+    MeshPhongMaterial,
     WebGLRenderer,
     SphereGeometry,
     BoxGeometry,
     Color,
     Fog,
+    HemisphereLight,
     AmbientLight,
     GridHelper
 } from "three"
@@ -19,7 +20,7 @@ import { useWindowSize } from "@vueuse/core"
 let renderer: WebGLRenderer
 const { width, height } = useWindowSize()
 const windowAspectRatio = computed(() => width.value / height.value)
-const displayAspectRatio = computed(() => width.value * 2 / width.value)
+// const displayAspectRatio = computed(() => (width.value - 20) * 2 / (width.value - 20))
 
 const myCanvas: Ref<HTMLCanvasElement| null> = ref(null)
 const scene = new Scene()
@@ -28,9 +29,12 @@ scene.fog = new Fog(bgColor, 0.1, 75)
 scene.background = bgColor
 
 const light = new AmbientLight(0x4F4F4F, 1)
-scene.add(light)
+// scene.add(light)
+const light2 = new HemisphereLight(0xFFFFBB, 0x080820, 1)
+scene.add(light2)
+window.console.log(light)
 
-const camera = new PerspectiveCamera(75, displayAspectRatio, 0.1, 1000)
+const camera = new PerspectiveCamera(75, windowAspectRatio, 0.1, 1000)
 camera.position.set(0, 2, 0)
 scene.add(camera)
 
@@ -43,58 +47,58 @@ scene.add(gridHelper)
 
 const sphere = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 sphere.position.set(0, 2, -10)
 scene.add(sphere)
 const sphere2 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 sphere2.position.set(0, 2, 10)
 scene.add(sphere2)
 
 const sphere3 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 sphere3.position.set(-10, 2, 0)
 scene.add(sphere3)
 const sphere4 = new Mesh(
     new SphereGeometry(1, 32, 32),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 sphere4.position.set(10, 2, 0)
 scene.add(sphere4)
 
 const boxy = new Mesh(
     new BoxGeometry(1, 1, 1),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 boxy.position.set(0, 2, -1)
 scene.add(boxy)
 const box = new Mesh(
     new BoxGeometry(1, 1, 1),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 box.position.set(10, 2, -10)
 scene.add(box)
 const box2 = new Mesh(
     new BoxGeometry(1, 1, 1),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 box2.position.set(-10, 2, 10)
 scene.add(box2)
 
 const box3 = new Mesh(
     new BoxGeometry(1, 1, 1),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 box3.position.set(-10, 2, -10)
 scene.add(box3)
 const box4 = new Mesh(
     new BoxGeometry(1, 1, 1),
-    new MeshDepthMaterial({ opacity: 1 })
+    new MeshPhongMaterial({ color: 0xA855F7 })
 )
 box4.position.set(10, 2, 10)
 scene.add(box4)
@@ -111,11 +115,12 @@ const setRenderer = () => {
 }
 
 const updateCamera = () => {
-    camera.aspect = displayAspectRatio.value
+    camera.aspect = windowAspectRatio.value
     camera.updateProjectionMatrix()
 }
 const updateRenderer = () => {
-    renderer.setSize(width.value, width.value / 2)
+    // renderer.setSize(width.value - 20, (width.value - 20) / 2)
+    renderer.setSize(width.value, height.value)
     renderer.render(scene, camera)
 }
 
