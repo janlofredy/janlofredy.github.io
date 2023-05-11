@@ -54,6 +54,11 @@ const drawer = () => {
                     Donate
                 </div>
             </NuxtLink>
+            <NuxtLink to="/privacypolicy" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+                <div class="p-5">
+                    Privacy Policy
+                </div>
+            </NuxtLink>
         </div>
     </div>
 </template>

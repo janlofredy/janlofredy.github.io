@@ -9,6 +9,8 @@
         <h3>W,A,S,D For Movement</h3>
         <h3>Double Space for Fly Mode</h3>
         <h3>Space, Shift to move up and down</h3>
-        <TheWindow />
+        <div class="flex justify-center">
+            <TheWindow />
+        </div>
     </div>
 </template>

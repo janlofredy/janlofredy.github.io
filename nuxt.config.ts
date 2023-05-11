@@ -3,13 +3,32 @@ export default defineNuxtConfig({
     ssr: false,
     modules: [
         "@nuxtjs/tailwindcss",
-        "@nuxtjs/google-adsense",
+        [
+            "@nuxtjs/google-adsense",
+            {
+                id: "ca-pub-3178142439196865",
+                test: process.env.GOOGLE_ADSENSE_TEST_MODE || false,
+            }
+        ],
         "@dargmuesli/nuxt-cookie-control",
         [
             "@nuxtjs/eslint-module",
             {
                 formatter: "stylish",
                 lintOnStart: false,
+                // fix: true
+            },
+        ],
+        [
+            "@dargmuesli/nuxt-cookie-control",
+            {
+                cookies: {
+                    necessary: [
+                        "ncc-c",
+                    ],
+                    optional: [],
+                },
+                isAcceptNecessaryButtonEnabled: true,
             },
         ],
     ],
@@ -33,9 +52,6 @@ export default defineNuxtConfig({
             id: process.env.GOOGLE_ADSENSE_ID || "ca-pub-3178142439196865",
             test: process.env.GOOGLE_ADSENSE_TEST_MODE || false,
         },
-    },
-    "google-adsense": {
-        id: "ca-pub-3178142439196865",
     },
     cookieControl: {
         // typed module options

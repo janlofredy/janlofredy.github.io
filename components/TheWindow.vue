@@ -120,7 +120,7 @@ const updateCamera = () => {
 }
 const updateRenderer = () => {
     // renderer.setSize(width.value - 20, (width.value - 20) / 2)
-    renderer.setSize(width.value, height.value)
+    renderer.setSize(width.value / 1.10, height.value / 1.10)
     renderer.render(scene, camera)
 }
 
