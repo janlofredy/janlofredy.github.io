@@ -5,7 +5,7 @@
         <div id="foot-head">
             <LayoutIconLinks />
         </div>
-        <div id="foot-body" class="flex flex-row justify-around ">
+        <div id="foot-body" class="flex flex-row flex-wrap justify-around ">
             <div id="quick-inks" class="md:flex flex-col items-center text-left">
                 <p class="font-bold text-lg">
                     Quick Links
