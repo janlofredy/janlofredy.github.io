@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-    <foot class="flex flex-col bg-teal-100 dark:bg-teal-900 pt-10">
+    <foot class="flex flex-col bg-color1 dark:bg-dcolor1 pt-10">
         <div id="foot-head">
             <LayoutIconLinks />
         </div>

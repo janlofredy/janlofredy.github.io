@@ -8,7 +8,7 @@ const drawer = () => {
 </script>
 <template>
     <head id="header" class="flex flex-row justify-between">
-        <NuxtLink id="pageTitleLogo" to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+        <NuxtLink id="pageTitleLogo" to="/" class="hover:bg-color1 dark:hover:bg-dcolor1">
             <div class="px-5 py-1 text-5xl">
                 JOSE JANLOFRE
             </div>
@@ -29,27 +29,27 @@ const drawer = () => {
             </button>
         </div>
         <div id="navigation" class="hidden md:flex flex-row items-center justify-center">
-            <NuxtLink to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+            <NuxtLink to="/" class="hover:bg-color1 dark:hover:bg-dcolor1">
                 <div class="p-5">
                     Home
                 </div>
             </NuxtLink>
-            <NuxtLink to="/about" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+            <NuxtLink to="/about" class="hover:bg-color1 dark:hover:bg-dcolor1">
                 <div class="p-5">
                     About
                 </div>
             </NuxtLink>
-            <NuxtLink to="/projects" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+            <NuxtLink to="/projects" class="hover:bg-color1 dark:hover:bg-dcolor1">
                 <div class="p-5">
                     Projects
                 </div>
             </NuxtLink>
-            <NuxtLink to="/contact" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+            <NuxtLink to="/contact" class="hover:bg-color1 dark:hover:bg-dcolor1">
                 <div class="p-5">
                     Contact
                 </div>
             </NuxtLink>
-            <NuxtLink to="/donate" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+            <NuxtLink to="/donate" class="hover:bg-color1 dark:hover:bg-dcolor1">
                 <div class="p-5">
                     Donate
                 </div>

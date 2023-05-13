@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-teal-100 dark:bg-teal-800 p-5 border-teal-300 border">
+    <div class="bg-color1 dark:bg-teal-800 p-5 border-teal-300 border">
         <h1>Privacy Policy for Jose Janlofre Dy</h1>
 
         <p>At Jose Janlofre Dy, accessible from https://janlofredy.github.io/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Jose Janlofre Dy and how we use it.</p>

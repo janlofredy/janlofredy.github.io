@@ -245,9 +245,11 @@ window.addEventListener("keydown", (key) => {
         moveLeft = true
     }
     if (key.key === " ") {
+        key.preventDefault()
         moveUp = true
     }
     if (key.keyCode === 16) {
+        key.preventDefault()
         moveDown = true
     }
 })
@@ -267,6 +269,7 @@ window.addEventListener("keyup", (key) => {
         moveLeft = false
     }
     if (key.key === " ") {
+        key.preventDefault()
         moveUp = false
         const pressedNow = new Date()
         if (pressedNow - lastSpacePressedTime <= doublePressDelayMS) {
@@ -276,6 +279,7 @@ window.addEventListener("keyup", (key) => {
         lastSpacePressedTime = pressedNow
     }
     if (key.keyCode === 16) {
+        key.preventDefault()
         moveDown = false
     }
 })
@@ -321,7 +325,7 @@ window.addEventListener("dblclick", () => {
 
 </script>
 <template>
-    <div>
+    <div class="border border-color1 flex justify-center items-center">
         <canvas ref="myCanvas" />
     </div>
 </template>
