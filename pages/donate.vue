@@ -1,5 +1,5 @@
 <template>
     <div>
-        Pls Gib Moni
+        PLACEHOLDER CONTENT
     </div>
 </template>

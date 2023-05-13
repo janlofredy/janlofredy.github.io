@@ -16,7 +16,7 @@ export default defineNuxtConfig({
             {
                 formatter: "stylish",
                 lintOnStart: false,
-                // fix: true
+                fix: true
             },
         ],
         [
@@ -44,6 +44,8 @@ export default defineNuxtConfig({
             meta: [
                 { charset: "utf-8" },
                 { name: "viewport", content: "width=device-width, initial-scale=1" },
+                { name: "description", content: "Jose Janlofre Dy, web developer. Full-Stack Web Developer." },
+                { name: "og:description", content: "Jose Janlofre Dy, web developer. Full-Stack Web Developer." },
             ],
         },
     },

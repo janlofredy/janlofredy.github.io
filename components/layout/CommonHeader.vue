@@ -7,13 +7,13 @@ const drawer = () => {
 }
 </script>
 <template>
-    <div class="flex flex-row justify-between">
-        <NuxtLink to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
+    <head id="header" class="flex flex-row justify-between">
+        <NuxtLink id="pageTitleLogo" to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
             <div class="px-5 py-1 text-5xl">
                 JOSE JANLOFRE
             </div>
         </NuxtLink>
-        <div class="block md:hidden">
+        <div id="mobileNavigation" class="block md:hidden">
             <button class="p-2" @click="drawer()">
                 <svg
                     class="h-8 w-8 fill-current text-black"
@@ -28,7 +28,7 @@ const drawer = () => {
                 </svg>
             </button>
         </div>
-        <div class="hidden md:flex flex-row items-center justify-center">
+        <div id="navigation" class="hidden md:flex flex-row items-center justify-center">
             <NuxtLink to="/" class="hover:bg-teal-100 dark:hover:bg-teal-900">
                 <div class="p-5">
                     Home
@@ -54,11 +54,6 @@ const drawer = () => {
                     Donate
                 </div>
             </NuxtLink>
-            <NuxtLink to="/privacypolicy" class="hover:bg-teal-100 dark:hover:bg-teal-900">
-                <div class="p-5">
-                    Privacy Policy
-                </div>
-            </NuxtLink>
         </div>
-    </div>
+    </head>
 </template>

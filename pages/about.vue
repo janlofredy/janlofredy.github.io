@@ -1,5 +1,5 @@
 <template>
     <div>
-        ABOUT ME
+        PLACEHOLDER CONTENT
     </div>
 </template>

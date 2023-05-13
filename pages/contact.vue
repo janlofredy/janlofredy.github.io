@@ -1,6 +1,6 @@
 
 <template>
     <div>
-        HOW TO CONTACT
+        PLACEHOLDER CONTENT
     </div>
 </template>

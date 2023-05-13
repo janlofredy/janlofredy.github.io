@@ -7,7 +7,7 @@
         >
             <h1>Jose Janlofre Dy</h1>
             <p>
-                I'm a Web developer
+                I'm a Web developer. And I'm developing my own website, but it's still under development.
             </p>
         </div>
     </div>
