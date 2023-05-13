@@ -7,7 +7,7 @@ const drawer = () => {
 }
 </script>
 <template>
-    <head id="header" class="flex flex-row justify-between">
+    <head class="flex flex-row justify-between">
         <NuxtLink id="pageTitleLogo" to="/" class="hover:bg-color1 dark:hover:bg-dcolor1">
             <div class="px-5 py-1 text-5xl">
                 JOSE JANLOFRE
