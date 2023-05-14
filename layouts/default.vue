@@ -4,15 +4,13 @@
         <div id="body" class="grow px-10 py-5 flex flex-col">
             <div class="grow flex flex-wrap">
                 <div class="min-w-fit max-w-full max-h-60 md:max-h-32 w-full">
-                    <ins class="adsbygoogle" />
-                    <!-- <adsbygoogle /> -->
+                    <adsbygoogle ad-slot="test" ad-style="" />
                 </div>
                 <div class="flex flex-col grow">
                     <slot />
                 </div>
                 <div class="min-w-fit max-w-full min-h-fit max-h-60 md:max-h-32 w-full">
-                    <ins class="adsbygoogle" />
-                    <!-- <adsbygoogle /> -->
+                    <adsbygoogle ad-style="" />
                 </div>
             </div>
         </div>

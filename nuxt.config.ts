@@ -49,11 +49,13 @@ export default defineNuxtConfig({
             ],
         },
     },
-    publicRuntimeConfig: {
-        "google-adsense": {
-            id: process.env.GOOGLE_ADSENSE_ID || "ca-pub-3178142439196865",
-            test: process.env.GOOGLE_ADSENSE_TEST_MODE || false,
-        },
+    runtimeConfig: {
+        public: {
+            "google-adsense": {
+                id: process.env.GOOGLE_ADSENSE_ID || "ca-pub-3178142439196865",
+                test: process.env.GOOGLE_ADSENSE_TEST_MODE == "true",
+            },
+        }
     },
     cookieControl: {
         // typed module options
