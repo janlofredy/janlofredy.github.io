@@ -13,13 +13,16 @@
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.0.2",
     "@nuxtjs/tailwindcss": "^6.6.7",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@types/node": "^18",
     "@vueuse/core": "^10.1.2",
     "nuxt": "^3.4.3"
   },
   "dependencies": {
     "@nuxtjs/google-adsense": "^2.1.0",
+    "@pinia/nuxt": "^0.4.10",
     "aos": "^2.3.4",
+    "pinia": "^2.0.36",
     "three": "^0.152.2",
     "three-addons": "^1.2.0"
   }

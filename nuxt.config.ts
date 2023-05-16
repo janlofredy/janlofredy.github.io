@@ -31,6 +31,8 @@ export default defineNuxtConfig({
                 isAcceptNecessaryButtonEnabled: true,
             },
         ],
+        '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
     ],
     plugins: [
         "~/plugins/aos.client.js",

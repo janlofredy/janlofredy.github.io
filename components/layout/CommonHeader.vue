@@ -1,9 +1,12 @@
 <!-- Guide to use for Responsive NAV Bar -->
 <!-- https://github.com/serresebastien/Nuxt-Tailwind-Responsive-Navbar/blob/master/components/NavBar.vue -->
 <script setup>
-const isOpen = ref(false)
+import { storeToRefs } from "pinia"
+import { useAppState } from "@/stores/appState"
+const appstate = useAppState()
+const { navIsOpen } = storeToRefs(appstate)
 const drawer = () => {
-    isOpen.value = !isOpen.value
+    navIsOpen.value = !navIsOpen.value
 }
 </script>
 <template>
@@ -29,27 +32,27 @@ const drawer = () => {
             </button>
         </div>
         <div id="navigation" class="hidden md:flex flex-row items-center justify-center">
-            <NuxtLink to="/" class="hover:bg-color1 dark:hover:bg-dcolor1">
+            <NuxtLink to="/" class="hover:bg-color1 dark:hover:bg-dcolor1" active-class="bg-color1 dark:bg-dcolor1">
                 <div class="p-5">
                     Home
                 </div>
             </NuxtLink>
-            <NuxtLink to="/about" class="hover:bg-color1 dark:hover:bg-dcolor1">
+            <NuxtLink to="/about" class="hover:bg-color1 dark:hover:bg-dcolor1" active-class="bg-color1 dark:bg-dcolor1">
                 <div class="p-5">
                     About
                 </div>
             </NuxtLink>
-            <NuxtLink to="/projects" class="hover:bg-color1 dark:hover:bg-dcolor1">
+            <NuxtLink to="/projects" class="hover:bg-color1 dark:hover:bg-dcolor1" active-class="bg-color1 dark:bg-dcolor1">
                 <div class="p-5">
                     Projects
                 </div>
             </NuxtLink>
-            <NuxtLink to="/contact" class="hover:bg-color1 dark:hover:bg-dcolor1">
+            <NuxtLink to="/contact" class="hover:bg-color1 dark:hover:bg-dcolor1" active-class="bg-color1 dark:bg-dcolor1">
                 <div class="p-5">
                     Contact
                 </div>
             </NuxtLink>
-            <NuxtLink to="/donate" class="hover:bg-color1 dark:hover:bg-dcolor1">
+            <NuxtLink to="/donate" class="hover:bg-color1 dark:hover:bg-dcolor1" active-class="bg-color1 dark:bg-dcolor1">
                 <div class="p-5">
                     Donate
                 </div>
