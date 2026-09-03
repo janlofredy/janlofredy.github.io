@@ -3,151 +3,95 @@ import {
     Scene,
     PerspectiveCamera,
     Mesh,
-    MeshPhongMaterial,
+    MeshStandardMaterial,
     WebGLRenderer,
     SphereGeometry,
     BoxGeometry,
     Color,
     Fog,
-    HemisphereLight,
+    DirectionalLight,
     AmbientLight,
     GridHelper
 } from "three"
 import { PointerLockControls } from "three/addons/controls/PointerLockControls.js"
-import { Ref } from "vue"
-import { useWindowSize } from "@vueuse/core"
 
-let renderer: WebGLRenderer
-const { width, height } = useWindowSize()
-const windowAspectRatio = computed(() => width.value / height.value)
-// const displayAspectRatio = computed(() => (width.value - 20) * 2 / (width.value - 20))
+const containerRef = ref<HTMLDivElement | null>(null)
+const myCanvas = ref<HTMLCanvasElement | null>(null)
 
-const myCanvas: Ref<HTMLCanvasElement| null> = ref(null)
+let renderer: WebGLRenderer | null = null
+let camera: PerspectiveCamera | null = null
+let myChar: PointerLockControls | null = null
+const isLocked = ref(false)
+const flyModeActive = ref(false)
+
 const scene = new Scene()
-const bgColor = new Color("#CCFBF1")
-scene.fog = new Fog(bgColor, 0.1, 75)
+const bgColor = new Color("#030712") // Deep slate dark
+scene.fog = new Fog(bgColor, 0.1, 85)
 scene.background = bgColor
 
-const light = new AmbientLight(0x4F4F4F, 1)
-// scene.add(light)
-const light2 = new HemisphereLight(0xFFFFBB, 0x080820, 1)
-scene.add(light2)
-window.console.log(light)
+// Lighting
+const ambientLight = new AmbientLight(0x1e293b, 1.5)
+scene.add(ambientLight)
 
-const camera = new PerspectiveCamera(75, windowAspectRatio, 0.1, 1000)
-camera.position.set(0, 2, 0)
-scene.add(camera)
+const dirLight = new DirectionalLight(0x2dd4bf, 2)
+dirLight.position.set(10, 20, 10)
+scene.add(dirLight)
 
-let myChar: PointerLockControls
+const dirLight2 = new DirectionalLight(0x06b6d4, 1.5)
+dirLight2.position.set(-10, -10, -10)
+scene.add(dirLight2)
 
+// Grid
 const size = 100
-const divisions = 500
-const gridHelper = new GridHelper(size, divisions)
+const divisions = 100
+const gridHelper = new GridHelper(size, divisions, 0x14b8a6, 0x1f2937)
 scene.add(gridHelper)
 
-const sphere = new Mesh(
-    new SphereGeometry(1, 32, 32),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-sphere.position.set(0, 2, -10)
-scene.add(sphere)
-const sphere2 = new Mesh(
-    new SphereGeometry(1, 32, 32),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-sphere2.position.set(0, 2, 10)
-scene.add(sphere2)
-
-const sphere3 = new Mesh(
-    new SphereGeometry(1, 32, 32),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-sphere3.position.set(-10, 2, 0)
-scene.add(sphere3)
-const sphere4 = new Mesh(
-    new SphereGeometry(1, 32, 32),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-sphere4.position.set(10, 2, 0)
-scene.add(sphere4)
-
-const boxy = new Mesh(
-    new BoxGeometry(1, 1, 1),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-boxy.position.set(0, 2, 0)
-scene.add(boxy)
-const box = new Mesh(
-    new BoxGeometry(1, 1, 1),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-box.position.set(10, 2, -10)
-scene.add(box)
-const box2 = new Mesh(
-    new BoxGeometry(1, 1, 1),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-box2.position.set(-10, 2, 10)
-scene.add(box2)
-
-const box3 = new Mesh(
-    new BoxGeometry(1, 1, 1),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-box3.position.set(-10, 2, -10)
-scene.add(box3)
-const box4 = new Mesh(
-    new BoxGeometry(1, 1, 1),
-    new MeshPhongMaterial({ color: 0xA855F7 })
-)
-box4.position.set(10, 2, 10)
-scene.add(box4)
-
-const setRenderer = () => {
-    if (myCanvas.value) {
-        renderer = new WebGLRenderer({
-            canvas: myCanvas.value,
-            alpha: true
-        })
-        updateCamera()
-        updateRenderer()
-    }
-}
-
-const updateCamera = () => {
-    camera.aspect = windowAspectRatio.value
-    camera.updateProjectionMatrix()
-}
-const updateRenderer = () => {
-    // renderer.setSize(width.value - 20, (width.value - 20) / 2)
-    renderer.setSize(width.value / 1.10, height.value / 1.10)
-    renderer.render(scene, camera)
-}
-
-onMounted(() => {
-    setRenderer()
-    myChar = new PointerLockControls(camera, renderer.domElement)
-    myChar.enabled = true
-    myChar.dragToLook = true
-    myChar.movementSpeed = 0.5
-    loop()
+// Meshes (Cyber / Engineering theme)
+const boxMaterial = new MeshStandardMaterial({
+    color: 0x0f172a,
+    roughness: 0.2,
+    metalness: 0.8,
 })
-watch(windowAspectRatio, () => {
-    updateCamera()
-    updateRenderer()
+const accentMaterial = new MeshStandardMaterial({
+    color: 0x14b8a6,
+    roughness: 0.1,
+    metalness: 0.5,
 })
 
-// let mouseClickLocationX = 0
-// let mouseClickLocationY = 0
-let maxXrot = 0
-let maxYrot = 0
-let minXrot = 0
-let minYrot = 0
-let maxZrot = 0
-let minZrot = 0
-// let dragging = false
-let currentHeight = 2
-const floor = 2
+const spheres: Mesh[] = []
+const boxes: Mesh[] = []
+
+const spherePositions = [
+    [0, 2, -10],
+    [0, 2, 10],
+    [-10, 2, 0],
+    [10, 2, 0],
+]
+
+spherePositions.forEach(([x, y, z]) => {
+    const s = new Mesh(new SphereGeometry(1, 32, 32), accentMaterial)
+    s.position.set(x, y, z)
+    scene.add(s)
+    spheres.push(s)
+})
+
+const boxPositions = [
+    [0, 2, 0],
+    [10, 2, -10],
+    [-10, 2, 10],
+    [-10, 2, -10],
+    [10, 2, 10],
+]
+
+boxPositions.forEach(([x, y, z]) => {
+    const b = new Mesh(new BoxGeometry(1.2, 1.2, 1.2), boxMaterial)
+    b.position.set(x, y, z)
+    scene.add(b)
+    boxes.push(b)
+})
+
+// Movement State
 let moveForward = false
 let moveLeft = false
 let moveBack = false
@@ -155,95 +99,66 @@ let moveRight = false
 let moveUp = false
 let moveDown = false
 let flyMode = false
-// const yLimit = -0.75
-// const sphereLimit = -25
+let currentHeight = 2
+const floor = 2
+let animFrameId: number | null = null
+
+const updateDimensions = () => {
+    if (!containerRef.value || !renderer || !camera) return
+    const width = containerRef.value.clientWidth
+    const height = Math.min(Math.max(width * 0.5625, 360), 600) // 16:9 ratio capped
+
+    camera.aspect = width / height
+    camera.updateProjectionMatrix()
+    renderer.setSize(width, height)
+}
+
 const loop = () => {
-    box.rotation.y -= 0.025
-    box2.rotation.y -= 0.025
-    box3.rotation.y -= 0.025
-    box4.rotation.y -= 0.025
-    box.rotation.x -= 0.025
-    box2.rotation.x -= 0.025
-    box3.rotation.x -= 0.025
-    box4.rotation.x -= 0.025
-    boxy.rotation.y -= 0.025
-    boxy.rotation.x -= 0.025
-    // myChar.update(1.0)
-    // if (sphere.position.z > sphereLimit) {
-    //     sphere.position.z -= 0.1
-    // }
-    // window.console.log("Sphere= " + sphere.position.x)
-    // window.console.log("Camera= " + camera.rotation.y)
-    // window.console.log(mouseClickLocationX)
-    // window.console.log(mouseClickLocationY)
-    if (minXrot < camera.rotation.x) {
-        minXrot = camera.rotation.x
-    }
-    if (maxXrot > camera.rotation.x) {
-        maxXrot = camera.rotation.x
-    }
-    if (minYrot < camera.rotation.y) {
-        minYrot = camera.rotation.y
-    }
-    if (maxYrot > camera.rotation.y) {
-        maxYrot = camera.rotation.y
-    }
-    if (minZrot < camera.rotation.z) {
-        minZrot = camera.rotation.z
-    }
-    if (maxZrot > camera.rotation.z) {
-        maxZrot = camera.rotation.z
-    }
-    // xrot = +-3.2;
-    // yrot = +-1.5;
-    // zrot = +-3.1
-    // window.console.log(minXrot)
-    // window.console.log(maxXrot)
-    // window.console.log(minYrot)
-    // window.console.log(maxYrot)
-    // window.console.log(minZrot)
-    // window.console.log(maxZrot)
-    if (moveForward) {
-        myChar.moveForward(0.175)
-    }
-    if (moveBack) {
-        myChar.moveForward(-0.175)
-    }
-    if (moveRight) {
-        myChar.moveRight(0.175)
-    }
-    if (moveLeft) {
-        myChar.moveRight(-0.175)
-    }
-    if (moveUp) {
-        currentHeight += 0.175
-    }
-    if (moveUp && !flyMode) {
-        currentHeight += 0.175
-    } else if (moveDown || !flyMode) {
-        currentHeight -= 0.175
-        if (currentHeight < floor) {
-            currentHeight = 2
+    boxes.forEach(b => {
+        b.rotation.y -= 0.015
+        b.rotation.x -= 0.015
+    })
+
+    spheres.forEach((s, idx) => {
+        s.position.y = 2 + Math.sin(Date.now() * 0.002 + idx) * 0.4
+    })
+
+    if (myChar) {
+        const speed = flyMode ? 0.25 : 0.15
+        if (moveForward) myChar.moveForward(speed)
+        if (moveBack) myChar.moveForward(-speed)
+        if (moveRight) myChar.moveRight(speed)
+        if (moveLeft) myChar.moveRight(-speed)
+
+        if (moveUp) {
+            currentHeight += speed
+        }
+        if (moveUp && !flyMode) {
+            currentHeight += speed
+        } else if (moveDown || !flyMode) {
+            currentHeight -= speed
+            if (currentHeight < floor) currentHeight = floor
+        }
+
+        if (camera) {
+            camera.position.y = currentHeight
+            camera.updateProjectionMatrix()
         }
     }
-    camera.position.y = currentHeight
-    camera.updateProjectionMatrix()
-    renderer.render(scene, camera)
-    requestAnimationFrame(loop)
+
+    if (renderer && camera) {
+        renderer.render(scene, camera)
+    }
+
+    animFrameId = requestAnimationFrame(loop)
 }
-window.addEventListener("keydown", (key) => {
-    if (key.key === "w") {
-        moveForward = true
-    }
-    if (key.key === "s") {
-        moveBack = true
-    }
-    if (key.key === "d") {
-        moveRight = true
-    }
-    if (key.key === "a") {
-        moveLeft = true
-    }
+
+const handleKeyDown = (key: KeyboardEvent) => {
+    if (!isLocked.value) return
+    if (key.key === "w" || key.key === "W") moveForward = true
+    if (key.key === "s" || key.key === "S") moveBack = true
+    if (key.key === "d" || key.key === "D") moveRight = true
+    if (key.key === "a" || key.key === "A") moveLeft = true
     if (key.key === " ") {
         key.preventDefault()
         moveUp = true
@@ -252,29 +167,24 @@ window.addEventListener("keydown", (key) => {
         key.preventDefault()
         moveDown = true
     }
-})
+}
+
 let lastSpacePressedTime = 0
-const doublePressDelayMS = 500
-window.addEventListener("keyup", (key) => {
-    if (key.key === "w") {
-        moveForward = false
-    }
-    if (key.key === "s") {
-        moveBack = false
-    }
-    if (key.key === "d") {
-        moveRight = false
-    }
-    if (key.key === "a") {
-        moveLeft = false
-    }
+const doublePressDelayMS = 400
+
+const handleKeyUp = (key: KeyboardEvent) => {
+    if (!isLocked.value) return
+    if (key.key === "w" || key.key === "W") moveForward = false
+    if (key.key === "s" || key.key === "S") moveBack = false
+    if (key.key === "d" || key.key === "D") moveRight = false
+    if (key.key === "a" || key.key === "A") moveLeft = false
     if (key.key === " ") {
         key.preventDefault()
         moveUp = false
-        const pressedNow = new Date()
+        const pressedNow = Date.now()
         if (pressedNow - lastSpacePressedTime <= doublePressDelayMS) {
             flyMode = !flyMode
-            lastSpacePressedTime = pressedNow
+            flyModeActive.value = flyMode
         }
         lastSpacePressedTime = pressedNow
     }
@@ -282,50 +192,120 @@ window.addEventListener("keyup", (key) => {
         key.preventDefault()
         moveDown = false
     }
-})
-window.addEventListener("dblclick", () => {
-    if (!myChar.isLocked) {
+}
+
+const lockPointer = () => {
+    if (myChar && !myChar.isLocked) {
         myChar.lock()
     }
-    // window.console.log(mouse)
+}
+
+onMounted(() => {
+    if (!myCanvas.value || !containerRef.value) return
+
+    const initialWidth = containerRef.value.clientWidth
+    const initialHeight = Math.min(Math.max(initialWidth * 0.5625, 360), 600)
+
+    camera = new PerspectiveCamera(75, initialWidth / initialHeight, 0.1, 1000)
+    camera.position.set(0, 2, 0)
+    scene.add(camera)
+
+    renderer = new WebGLRenderer({
+        canvas: myCanvas.value,
+        antialias: true,
+    })
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setSize(initialWidth, initialHeight)
+
+    myChar = new PointerLockControls(camera, renderer.domElement)
+
+    myChar.addEventListener("lock", () => {
+        isLocked.value = true
+    })
+
+    myChar.addEventListener("unlock", () => {
+        isLocked.value = false
+        moveForward = false
+        moveBack = false
+        moveLeft = false
+        moveRight = false
+        moveUp = false
+        moveDown = false
+    })
+
+    window.addEventListener("keydown", handleKeyDown)
+    window.addEventListener("keyup", handleKeyUp)
+    window.addEventListener("resize", updateDimensions)
+
+    loop()
 })
-// window.addEventListener("mousedown", () => {
-//     if (!dragging) {
-//         // mouseClickLocationX = mouse.screenX
-//         // mouseClickLocationY = mouse.screenY
-//         dragging = true
-//     }
-//     // window.console.log(mouse)
-// })
-// window.addEventListener("mouseup", () => {
-//     dragging = false
-//     // window.console.log(mouse)
-// })
-// window.addEventListener("mousemove", () => {
-//     if (dragging) {
-//         // mouse
 
-//         // window.console.log(camera.rotation.x)
-//         // window.console.log(mouseClickLocationY - mouse.screenY)
-//         // window.console.log(mouseClickLocationX - mouse.screenX)
-//         const test = new Vector3(0, 0, 0)
-//         window.console.log(test)
-//         // if (camera.rotation.x <= 1 && (mouseClickLocationY - mouse.screenY) > 0) {
-//         // }
-//         // if (camera.rotation.x >= -1 && (mouseClickLocationY - mouse.screenY) < 0) {
-//         // }
-//         // camera.rotateOnAxis(new Vector3(1, 0, 0), (mouseClickLocationY - mouse.screenY) / 100)
-//         // camera.rotateOnWorldAxis(new Vector3(1, 0, 0), (mouseClickLocationY - mouse.screenY) / 100)
-//         // camera.rotateOnWorldAxis(new Vector3(0, 1, 0), (mouseClickLocationX - mouse.screenX) / 100)
-//         // mouseClickLocationX = mouse.screenX
-//         // mouseClickLocationY = mouse.screenY
-//         // camera.rotation.z = 0
-//     }
-// })
-
+onBeforeUnmount(() => {
+    if (animFrameId) cancelAnimationFrame(animFrameId)
+    window.removeEventListener("keydown", handleKeyDown)
+    window.removeEventListener("keyup", handleKeyUp)
+    window.removeEventListener("resize", updateDimensions)
+    if (myChar) myChar.dispose()
+    if (renderer) renderer.dispose()
+})
 </script>
+
 <template>
-    <div class="border border-color1 flex justify-center items-center">
-        <canvas ref="myCanvas" />
+    <div ref="containerRef" class="relative w-full rounded-lg border border-dark-border bg-dark-base overflow-hidden shadow-2xl">
+        <!-- Canvas -->
+        <canvas ref="myCanvas" class="w-full block cursor-pointer" @click="lockPointer" />
+
+        <!-- Overlay HUD: When Unlocked -->
+        <div
+            v-if="!isLocked"
+            class="absolute inset-0 bg-dark-base/70 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center transition-all cursor-pointer select-none"
+            @click="lockPointer"
+        >
+            <div class="w-12 h-12 rounded-full border border-accent-teal/60 bg-dark-surface/90 flex items-center justify-center text-accent-teal mb-3 shadow-lg group-hover:scale-105 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                </svg>
+            </div>
+            <p class="font-mono text-base font-bold text-slate-100">
+                Click Inside to Engage 3D Camera Lock
+            </p>
+            <p class="font-mono text-xs text-slate-400 mt-1 max-w-md">
+                PointerLockControls captures mouse coordinates for full first-person navigation.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-2 mt-4 text-[11px] font-mono text-slate-400">
+                <span class="px-2 py-0.5 rounded border border-dark-border bg-dark-elevated">W, A, S, D Movement</span>
+                <span class="px-2 py-0.5 rounded border border-dark-border bg-dark-elevated">Double Space for Fly Mode</span>
+                <span class="px-2 py-0.5 rounded border border-dark-border bg-dark-elevated">ESC to Release Mouse</span>
+            </div>
+        </div>
+
+        <!-- In-Game HUD: When Locked -->
+        <div
+            v-else
+            class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none select-none text-[11px] font-mono"
+        >
+            <div class="flex items-center gap-2 px-2.5 py-1 rounded bg-dark-base/80 border border-dark-border backdrop-blur text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>SYSTEM ACTIVE</span>
+                <span v-if="flyModeActive" class="text-accent-teal font-bold ml-1">[FLY MODE ON]</span>
+            </div>
+
+            <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-dark-base/80 border border-dark-border backdrop-blur text-slate-400">
+                <span>[W/A/S/D] Move</span>
+                <span>&bull;</span>
+                <span>[Space/Shift] Elevate</span>
+                <span>&bull;</span>
+                <span class="text-slate-200">[ESC] Exit</span>
+            </div>
+        </div>
+
+        <!-- Crosshair HUD -->
+        <div
+            v-if="isLocked"
+            class="absolute inset-0 pointer-events-none flex items-center justify-center"
+        >
+            <div class="w-2 h-2 rounded-full border border-accent-teal/80 bg-accent-teal/30"></div>
+        </div>
     </div>
 </template>
