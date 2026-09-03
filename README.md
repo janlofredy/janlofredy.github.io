@@ -30,6 +30,7 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 - **myBizNiche** — *Full-stack Developer* (Dec 2022 – Jan 2024)
 - **ACLC College of Butuan** — *CS Instructor* (Apr 2020 – Jun 2023)
 - **Education** — *BS in Computer Science*, ACLC College of Butuan (2015 – 2019)
+  - *Award*: 1st Place Champion, 2018 Caraga Regional ICT Congress (Inter-College Event) & Codersguild Champion (Inter-College Event)
 
 ---
 
@@ -50,7 +51,7 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 - **Role**: **Collaborator**
 - **Key Engineering**: Large-scale human resource information and payroll management system for the City Government of Butuan. Features robust Role-Based Access Control (RBAC), relational database modeling, compliance, and employee workflow auditing.
 
-### 4. [The Journal Library](https://janlofre.com/TheLibrary)
+### 4. [The Journal Library](https://thelibrary.janlofre.com/)
 - **Domain**: Progressive Web Application (PWA) / Digital Archiving
 - **Role**: Creator & Personal Project
 - **Key Engineering**: Offline-first web application featuring web manifest caching, local data state persistence, and an interactive skeuomorphic book spine reading interface.
@@ -65,15 +66,15 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 - **Role**: Undergraduate Thesis Researcher
 - **Key Engineering**: Research thesis project employing OpenPose keypoint extraction and Hidden Markov Models (HMM) for continuous gesture stream recognition.
 
-### 7. Self-Hosted Homelab & Container Infrastructure
-- **Domain**: DevOps & Systems Infrastructure
-- **Role**: Personal Project
-- **Key Engineering**: Bare-metal Linux home server running Docker Compose multi-container services, reverse proxying, internal DNS routing, and volume storage management.
+### 7. Self-Hosted Homelab & Container Server
+- **Domain**: Personal Hobby & Self-Hosted Infrastructure
+- **Role**: Personal Hobby / Self-Consumption
+- **Key Engineering**: Personal bare-metal Linux home server running Docker Compose containerized applications for home self-consumption, local staging, internal DNS routing, and volume storage management.
 
-### 8. 3D CAD Modeling & Additive Prototyping
-- **Domain**: CAD Design & 3D Printing
-- **Role**: Personal Project
-- **Key Engineering**: Simple parametric mechanical modeling using Autodesk Fusion (Personal License), slicer configuration, and functional physical prototyping using FDM 3D printing.
+### 8. Simple 3D Modeling & 3D Printing
+- **Domain**: Personal Hobby & 3D Printing
+- **Role**: Personal Hobby / Self-Consumption
+- **Key Engineering**: Hands-on maker hobby creating simple functional 3D models for personal self-consumption. Using the free personal license of Autodesk Fusion to model utility parts, mounts, and brackets, manufactured on a home FDM 3D printer.
 
 ---
 

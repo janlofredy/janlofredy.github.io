@@ -76,7 +76,7 @@ defineProps<{
                         {{ project.domain }}
                     </span>
                     <span class="font-mono text-[11px] text-slate-400 mt-0.5">
-                        {{ project.id === 'homelab-devops' ? 'Bare-Metal Linux Host' : (project.id === 'cad-3d-printing' ? 'Autodesk Fusion & FDM' : 'Production Architecture') }}
+                        {{ project.id === 'homelab-devops' ? 'Personal Self-Consumption Lab' : (project.id === 'cad-3d-printing' ? 'Personal Hobby / Simple Models' : 'Production Architecture') }}
                     </span>
                 </div>
 
@@ -102,7 +102,7 @@ defineProps<{
                 </span>
                 <span
                     class="px-2 py-0.5 rounded font-mono text-[10px] tracking-wider font-semibold border"
-                    :class="project.role === 'Collaborator' ? 'bg-amber-500/10 border-amber-500/40 text-amber-300' : 'bg-accent-teal/10 border-accent-teal/40 text-accent-teal'"
+                    :class="project.role === 'Collaborator' ? 'bg-amber-500/10 border-amber-500/40 text-amber-300' : (project.role.includes('Hobby') ? 'bg-purple-500/10 border-purple-500/40 text-purple-300' : 'bg-accent-teal/10 border-accent-teal/40 text-accent-teal')"
                 >
                     Role: {{ project.role }}
                 </span>
