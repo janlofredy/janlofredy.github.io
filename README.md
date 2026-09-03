@@ -14,8 +14,9 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 - **Location**: Caraga, Philippines
 - **Portfolio**: [janlofre.com](https://janlofre.com)
 - **Contact**: `dy@janlofre.com` | `09127051862`
-- **Core Focus**: Custom Enterprise Solutions, REST Microservices, Database Schema Architecture, and Interactive 3D WebGL (Excluding UI/UX)
-- **Tech Stack**: Nuxt 3, Vue 3, Laravel, Livewire, TypeScript, Tailwind CSS, Three.js, MySQL, PostgreSQL
+- **Core Focus**: Full Stack & Backend Engineering, Custom Web Systems, Database Schema Architecture, On-Premise/Local Client Deployments, and Interactive 3D WebGL (Excluding UI/UX)
+- **Track Record**: 15+ Custom Web Applications Delivered (specializing in local client machine & intranet deployments with Laravel & CodeIgniter, alongside cloud platforms)
+- **Tech Stack**: Nuxt 3, Vue 3, Laravel, CodeIgniter, Livewire, TypeScript, Tailwind CSS, Docker, Three.js, MySQL, PostgreSQL
 
 ---
 
@@ -63,6 +64,16 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 - **Domain**: Computer Vision & Pattern Recognition
 - **Role**: Undergraduate Thesis Researcher
 - **Key Engineering**: Research thesis project employing OpenPose keypoint extraction and Hidden Markov Models (HMM) for continuous gesture stream recognition.
+
+### 7. Self-Hosted Homelab & Container Infrastructure
+- **Domain**: DevOps & Systems Infrastructure
+- **Role**: Personal Project
+- **Key Engineering**: Bare-metal Linux home server running Docker Compose multi-container services, reverse proxying, internal DNS routing, and volume storage management.
+
+### 8. 3D CAD Modeling & Additive Prototyping
+- **Domain**: CAD Design & 3D Printing
+- **Role**: Personal Project
+- **Key Engineering**: Simple parametric mechanical modeling using Autodesk Fusion (Personal License), slicer configuration, and functional physical prototyping using FDM 3D printing.
 
 ---
 

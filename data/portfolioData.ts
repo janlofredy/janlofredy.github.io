@@ -41,10 +41,10 @@ export const portfolioData = {
         phone: "09127051862",
         canonicalUrl: "https://janlofre.com",
         buyMeACoffeeUrl: "https://buymeacoffee.com/janlofredyx",
-        bio: "Full Stack Software Engineer and Application Architect with over 6 years of experience leading teams, modeling database architectures, and engineering custom enterprise platforms across government, healthcare, and fintech domains.",
+        bio: "Full Stack Software Engineer and Application Architect with over 6 years of experience leading teams, modeling database architectures, and delivering 15+ custom web platforms. Specialized in building web-based systems deployed directly on client machines and local intranets using Laravel and CodeIgniter, as well as cloud-native SaaS applications.",
         stats: [
             { value: "6+", label: "Years Experience" },
-            { value: "5+", label: "Enterprise Systems Delivered" },
+            { value: "15+", label: "Custom Projects Delivered" },
             { value: "1st", label: "Regional ICT Congress Champion" },
             { value: "100%", label: "Engineering Depth, 0% Fluff" },
         ],
@@ -67,7 +67,8 @@ export const portfolioData = {
                 "Python (Flask)",
                 "Node.js / Express",
                 "RESTful APIs & Webhooks",
-                "Livewire Server Components",
+                "Docker & Docker Compose",
+                "Linux Local Server Administration",
                 "Java / C / C#",
             ],
         },
@@ -97,13 +98,14 @@ export const portfolioData = {
             ],
         },
         {
-            category: "Graphics, AI & Optimization",
-            description: "High-performance graphics pipelines, computer vision, and algorithm efficiency",
+            category: "Graphics, AI & Hardware Prototyping",
+            description: "3D graphics, computer vision algorithms, and physical rapid prototyping",
             skills: [
                 "Three.js (WebGL)",
+                "Autodesk Fusion (3D CAD)",
+                "3D Printing (FDM Prototyping)",
                 "Computer Vision (OpenPose)",
                 "Hidden Markov Models (HMM)",
-                "PointerLockControls Physics Loop",
                 "Algorithm Optimization",
                 "Git & GitHub Actions CI/CD",
             ],
@@ -219,9 +221,52 @@ export const portfolioData = {
             isOpenPose: true,
             previewImage: "https://raw.githubusercontent.com/CMU-Perceptual-Computing-Lab/openpose/master/.github/media/pose_face_hands.gif",
         },
+        {
+            id: "homelab-devops",
+            title: "Self-Hosted Homelab & Container Infrastructure",
+            subtitle: "Bare-Metal Linux Server & Docker Deployments",
+            domain: "DevOps & Infrastructure",
+            role: "Personal Project",
+            description:
+                "Personal self-hosted home server infrastructure operating on bare-metal Linux. Configured for containerized application deployments, local staging environments, internal DNS and reverse proxying, and volume persistence.",
+            architectureHighlights: [
+                "Architected and deployed multi-container service stacks using Docker and Docker Compose with isolated bridge networks and persistent host mounts.",
+                "Administered bare-metal Linux server environment with key-based SSH security, systemd service management, and automated cron maintenance.",
+                "Configured local reverse proxying and DNS routing to expose staging environments for internal web development workflows.",
+            ],
+            techStack: ["Docker", "Docker Compose", "Linux / Ubuntu", "Self-Hosted", "Reverse Proxy", "Bash"],
+            badge: "Homelab & DevOps",
+        },
+        {
+            id: "cad-3d-printing",
+            title: "3D CAD Modeling & Additive Prototyping",
+            subtitle: "Parametric Design in Autodesk Fusion & FDM 3D Printing",
+            domain: "CAD Modeling & 3D Printing",
+            role: "Personal Project",
+            description:
+                "Hands-on mechanical prototyping and 3D modeling using Autodesk Fusion (Personal License). Designing simple parametric utility models, slicing, and 3D printing custom brackets, mounts, and hardware enclosures.",
+            architectureHighlights: [
+                "Modeled simple, dimensionally accurate functional parts, structural brackets, and component enclosures in Autodesk Fusion.",
+                "Calibrated FDM slicer profiles (infill geometry, wall loops, layer heights, bed temperatures) to maximize structural strength and surface finish.",
+                "Iterated physical prototypes through continuous print-test-refine cycles for real-world mechanical applications.",
+            ],
+            techStack: ["Autodesk Fusion", "3D Printing (FDM)", "Parametric CAD", "Slicing Software", "Rapid Prototyping"],
+            badge: "CAD & 3D Printing",
+        },
     ] as Project[],
 
     experience: [
+        {
+            role: "DevOps & Systems Lab (Homelab)",
+            company: "Personal Infrastructure",
+            period: "2023 – Present",
+            location: "Local Lab",
+            highlights: [
+                "Deployed and maintained a bare-metal local Linux home server running Dockerized microservice deployments, persistent storage volumes, and internal networking.",
+                "Designed simple functional models in Autodesk Fusion and manufactured custom physical parts using FDM 3D printing.",
+            ],
+            technologies: ["Docker", "Docker Compose", "Linux", "Autodesk Fusion", "3D Printing (FDM)"],
+        },
         {
             role: "Senior Web Developer",
             company: "City Government of Butuan",
@@ -240,10 +285,10 @@ export const portfolioData = {
             duration: "2 yrs 2 mos",
             location: "Butuan, Philippines",
             highlights: [
-                "Directed cross-functional software engineering teams in delivering complex custom web applications and enterprise portals for global clients.",
-                "Defined coding standards, automated code review workflows, and sprint architectures, maintaining high release velocity and software quality.",
+                "Directed engineering teams in architecting and delivering 15+ custom web-based applications, primarily deployed locally on client machines and intranet networks using Laravel and CodeIgniter.",
+                "Defined coding standards, automated code review workflows, and sprint architectures, maintaining high release velocity and software quality across bespoke client solutions.",
             ],
-            technologies: ["Team Leadership", "Software Architecture", "CI/CD", "Code Quality", "Agile"],
+            technologies: ["Team Leadership", "Software Architecture", "Laravel", "CodeIgniter", "On-Premise Deployments", "Agile"],
         },
         {
             role: "Web Application Architect",
@@ -252,10 +297,10 @@ export const portfolioData = {
             duration: "1 yr 6 mos",
             location: "Butuan, Philippines",
             highlights: [
-                "Designed system architectures, relational database schemas, and microservice/API communication protocols for bespoke client software.",
-                "Conducted technical feasibility studies, database query optimization, and performance profiling for high-traffic applications.",
+                "Designed system architectures, relational database schemas, and API contracts for custom client software and standalone intranet installations.",
+                "Conducted technical feasibility studies, database query optimization, and performance profiling for local-machine and cloud environments.",
             ],
-            technologies: ["System Design", "Database Modeling", "API Contracts", "Performance Tuning"],
+            technologies: ["System Design", "Database Modeling", "Laravel", "CodeIgniter", "API Contracts", "Performance Tuning"],
         },
         {
             role: "Full-stack Developer",
@@ -276,10 +321,11 @@ export const portfolioData = {
             duration: "1 yr 2 mos",
             location: "Butuan, Philippines",
             highlights: [
-                "Spearheaded backend logic implementation, relational schema migrations, and complex business logic pipelines.",
+                "Built and deployed custom web applications directly to client workstations and servers using Laravel and CodeIgniter.",
+                "Spearheaded backend business logic implementation, relational schema migrations, and secure local client configurations.",
                 "Mentored junior developers on software design patterns, debugging methodologies, and automated testing.",
             ],
-            technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "REST APIs"],
+            technologies: ["PHP", "Laravel", "CodeIgniter", "MySQL", "Local Client Deployments", "REST APIs"],
         },
         {
             role: "Instructor (Computer Science)",
@@ -300,9 +346,9 @@ export const portfolioData = {
             duration: "3 yrs 1 mo",
             location: "Butuan, Philippines",
             highlights: [
-                "Developed full-stack web features, database queries, and responsive frontends across multiple commercial client web apps.",
+                "Developed full-stack web features, database queries, and client machine deployment configurations using CodeIgniter and Laravel.",
             ],
-            technologies: ["PHP", "JavaScript", "HTML/CSS", "MySQL"],
+            technologies: ["PHP (CodeIgniter & Laravel)", "MySQL", "Local Server Setup", "JavaScript", "HTML/CSS"],
         },
     ] as ExperienceItem[],
 

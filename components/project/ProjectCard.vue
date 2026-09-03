@@ -63,14 +63,20 @@ defineProps<{
 
                 <!-- Modern Architectural Card Fallback when local screenshot not yet stored -->
                 <div v-else class="relative z-10 flex flex-col items-center justify-center text-center p-6">
-                    <div class="w-12 h-12 rounded border border-dark-border bg-dark-surface flex items-center justify-center text-slate-400 font-mono text-xs font-bold mb-2">
-                        &lt;/&gt;
+                    <div class="w-12 h-12 rounded border border-dark-border bg-dark-surface flex items-center justify-center text-accent-teal font-mono text-xs font-bold mb-2 shadow-inner">
+                        <svg v-if="project.id === 'homelab-devops'" class="w-6 h-6 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                        </svg>
+                        <svg v-else-if="project.id === 'cad-3d-printing'" class="w-6 h-6 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <span v-else>&lt;/&gt;</span>
                     </div>
-                    <span class="font-mono text-xs font-medium text-slate-300 tracking-wider">
+                    <span class="font-mono text-xs font-medium text-slate-200 tracking-wider">
                         {{ project.domain }}
                     </span>
                     <span class="font-mono text-[11px] text-slate-400 mt-0.5">
-                        Production Architecture
+                        {{ project.id === 'homelab-devops' ? 'Bare-Metal Linux Host' : (project.id === 'cad-3d-printing' ? 'Autodesk Fusion & FDM' : 'Production Architecture') }}
                     </span>
                 </div>
 

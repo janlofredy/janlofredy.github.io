@@ -32,8 +32,8 @@
   - Name: Jose Janlofre Dy
   - Domain: janlofre.com
   - Headline: Software Developer | Application Architect | Bug Hunter
-  - Engineering Elevator Pitch: Specialized in architecting custom enterprise solutions, resilient REST APIs, and interactive WebGL experiences.
-  - Telemetry / Stats: (6+ Years Engineering, Enterprise Platforms, Competitive Programming Regional Champion)
+  - Engineering Elevator Pitch: Specialized in architecting custom enterprise solutions, resilient REST APIs, on-premise local machine deployments, and interactive WebGL experiences.
+  - Telemetry / Stats: (6+ Years Engineering, 15+ Custom Client Projects Delivered, Competitive Programming Regional Champion)
 
 [ Technical Arsenal / Stack Matrix ]
   - Backend & Systems: PHP (Laravel, CodeIgniter), Python (Flask), Node.js, Java, C, C#, REST APIs, Livewire, Microservices
@@ -48,6 +48,8 @@
   - Project 4: The Journal Library (Role: Personal Project • PWA / Offline Storage / Skeuomorphic Engine)
   - Project 5: Interactive 3D Simulation (Role: Personal Project • Playable Three.js WebGL Engine)
   - Project 6: ASLT American Sign Language Translator (Role: Thesis Researcher • AI / CV / OpenPose / HMM)
+  - Project 7: Self-Hosted Homelab (Role: Personal Project • Docker, Docker Compose, Bare-Metal Linux, Reverse Proxy)
+  - Project 8: 3D CAD Modeling & Prototyping (Role: Personal Project • Autodesk Fusion, FDM 3D Printing, Slicing)
 
 [ Playable Three.js WebGL Simulation Arena ]
   - Embedded canvas running PointerLockControls
