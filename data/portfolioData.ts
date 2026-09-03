@@ -3,6 +3,7 @@ export interface Project {
     title: string
     subtitle: string
     domain: string
+    role: string
     description: string
     architectureHighlights: string[]
     techStack: string[]
@@ -39,6 +40,7 @@ export const portfolioData = {
         email: "dy@janlofre.com",
         phone: "09127051862",
         canonicalUrl: "https://janlofre.com",
+        buyMeACoffeeUrl: "https://buymeacoffee.com/janlofredyx",
         bio: "Full Stack Software Engineer and Application Architect with over 6 years of experience leading teams, modeling database architectures, and engineering custom enterprise platforms across government, healthcare, and fintech domains.",
         stats: [
             { value: "6+", label: "Years Experience" },
@@ -114,6 +116,7 @@ export const portfolioData = {
             title: "Arizona Provider Training (AP Training)",
             subtitle: "Enterprise Healthcare Training, LMS & B2B E-Commerce Platform",
             domain: "Enterprise LMS / Healthcare Compliance",
+            role: "Collaborator",
             description:
                 "Comprehensive full-stack enterprise learning platform enabling healthcare workers and care agencies across Arizona to book, complete, and track state-mandated certifications. Built on the TALL stack with complex multi-location scheduling and B2B corporate agency accounts.",
             architectureHighlights: [
@@ -131,6 +134,7 @@ export const portfolioData = {
             title: "LowerMyDTI",
             subtitle: "Fintech Debt-to-Income Optimization & Financial Advisory Platform",
             domain: "Fintech / Custom Software",
+            role: "Collaborator",
             description:
                 "Custom fintech platform offering consumer debt analysis, debt-to-income optimization, and structured payment workflows. Combines a fast Nuxt frontend with distributed microservices, automated payment handling, and enterprise security layers.",
             architectureHighlights: [
@@ -148,6 +152,7 @@ export const portfolioData = {
             title: "City Human Resource Management System (CHRMS)",
             subtitle: "Government Enterprise Municipal HRIS & Workforce Infrastructure",
             domain: "Public Sector / Government Enterprise",
+            role: "Collaborator",
             description:
                 "Enterprise municipal human resource and records management infrastructure built for the City Government of Butuan, centralizing employee lifecycles, service records, and leave auditing across municipal offices.",
             architectureHighlights: [
@@ -165,6 +170,7 @@ export const portfolioData = {
             title: "The Journal Library",
             subtitle: "Progressive Web App & Skeuomorphic Interactive Archival System",
             domain: "PWA / Digital Archival",
+            role: "Personal Project",
             description:
                 "A digital library and journal application engineered as an offline-first Progressive Web App, featuring local state persistence and a custom skeuomorphic tactile rendering interface for book collections.",
             architectureHighlights: [
@@ -182,6 +188,7 @@ export const portfolioData = {
             title: "Real-Time 3D Movement Engine",
             subtitle: "Interactive In-Browser WebGL Physics & Navigation Simulation",
             domain: "WebGL / Real-Time 3D",
+            role: "Personal Project",
             description:
                 "In-browser 3D movement test built with Three.js and Vue 3. Features first-person PointerLock controls, double-tap fly mode mechanics, 6-axis keyboard tracking, and dynamic aspect-ratio rendering.",
             architectureHighlights: [
@@ -199,6 +206,7 @@ export const portfolioData = {
             title: "American Sign Language Translator (ASLT)",
             subtitle: "Computer Vision Gesture Translation Pipeline (Research Thesis)",
             domain: "Computer Vision / Pattern Recognition",
+            role: "Thesis Researcher",
             description:
                 "Computer science research thesis developing an automated continuous sign language translator. Leverages deep learning keypoint extraction to capture multi-joint skeletal coordinates and probabilistic sequential modeling to translate gesture streams into human-readable text.",
             architectureHighlights: [

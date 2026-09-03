@@ -276,7 +276,7 @@ const { personal, socials, skillCategories, projects, experience, education } = 
                     Get in Touch
                 </h2>
                 <p class="text-sm text-slate-400 max-w-2xl">
-                    Available for software architecture consulting, enterprise custom web development, and backend API engineering.
+                    Available for Full Stack & Backend Engineering roles, enterprise custom web systems, and high-performance API engineering.
                 </p>
             </div>
 

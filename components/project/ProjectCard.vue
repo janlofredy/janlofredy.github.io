@@ -89,9 +89,17 @@ defineProps<{
                 </a>
             </div>
 
-            <!-- Domain Badge -->
-            <div class="absolute top-3 left-3 z-20 px-2 py-0.5 rounded bg-dark-base/80 backdrop-blur border border-dark-border font-mono text-[10px] uppercase tracking-wider text-slate-300">
-                {{ project.badge || project.domain }}
+            <!-- Domain & Role Badges -->
+            <div class="absolute top-3 left-3 z-20 flex flex-wrap items-center gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-dark-base/90 backdrop-blur border border-dark-border font-mono text-[10px] uppercase tracking-wider text-slate-300">
+                    {{ project.badge || project.domain }}
+                </span>
+                <span
+                    class="px-2 py-0.5 rounded font-mono text-[10px] tracking-wider font-semibold border"
+                    :class="project.role === 'Collaborator' ? 'bg-amber-500/10 border-amber-500/40 text-amber-300' : 'bg-accent-teal/10 border-accent-teal/40 text-accent-teal'"
+                >
+                    Role: {{ project.role }}
+                </span>
             </div>
         </div>
 
@@ -103,9 +111,11 @@ defineProps<{
                         {{ project.title }}
                     </h3>
                 </div>
-                <p class="font-mono text-xs text-accent-teal/90 mt-1">
-                    {{ project.subtitle }}
-                </p>
+                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1">
+                    <span class="font-mono text-xs text-accent-teal/90">
+                        {{ project.subtitle }}
+                    </span>
+                </div>
 
                 <p class="text-sm text-slate-400 mt-3 leading-relaxed">
                     {{ project.description }}

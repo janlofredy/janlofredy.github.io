@@ -36,26 +36,32 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 
 ### 1. [Arizona Provider Training (AP Training)](https://ap.training/)
 - **Domain**: Enterprise LMS / B2B Healthcare Compliance & E-Commerce Platform
+- **Role**: **Collaborator**
 - **Key Engineering**: Built on the **TALL Stack (Tailwind CSS, Alpine.js, Laravel, Livewire 3)** with Eloquent ORM. Features a multi-tier course delivery system (self-paced online, live Zoom sync, and in-person classroom bookings across AZ training facilities), reactive Livewire course search & cart, and an enterprise B2B Agency portal for corporate enrollment and automated certificate generation.
 
 ### 2. [LowerMyDTI](https://lowermydti.com/)
 - **Domain**: Fintech / Debt-to-Income Optimization Platform
+- **Role**: **Collaborator**
 - **Key Engineering**: Nuxt frontend backed by distributed REST services (`api.lowermydti.com`, `connect.lowermydti.com`), PayPal Live transaction processing, Firebase Auth & Cloud Storage, Google reCAPTCHA Enterprise, and Google Places API.
 
 ### 3. [City Human Resource Management System (CHRMS)](https://chrms.butuan.gov.ph/)
 - **Domain**: Enterprise Government Software / Municipal HRIS
+- **Role**: **Collaborator**
 - **Key Engineering**: Large-scale human resource information and payroll management system for the City Government of Butuan. Features robust Role-Based Access Control (RBAC), relational database modeling, compliance, and employee workflow auditing.
 
 ### 4. [The Journal Library](https://janlofre.com/TheLibrary)
 - **Domain**: Progressive Web Application (PWA) / Digital Archiving
+- **Role**: Creator & Personal Project
 - **Key Engineering**: Offline-first web application featuring web manifest caching, local data state persistence, and an interactive skeuomorphic book spine reading interface.
 
 ### 5. Interactive 3D WebGL Simulation (Playable Engine)
 - **Domain**: Real-Time 3D Graphics & Physics Loop
+- **Role**: Creator & Personal Project
 - **Key Engineering**: Embedded Three.js simulation utilizing PointerLockControls, double-tap flight mode, 6-axis keyboard state tracking (`WASD + Space + Shift`), and procedural lighting.
 
 ### 6. Sign Language Translator (ASLT)
 - **Domain**: Computer Vision & Pattern Recognition
+- **Role**: Undergraduate Thesis Researcher
 - **Key Engineering**: Research thesis project employing OpenPose keypoint extraction and Hidden Markov Models (HMM) for continuous gesture stream recognition.
 
 ---
@@ -63,6 +69,7 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 ## 🌐 Connect & Socials
 
 - **Portfolio**: [janlofre.com](https://janlofre.com)
+- **Buy Me a Coffee**: [buymeacoffee.com/janlofredyx](https://buymeacoffee.com/janlofredyx)
 - **LinkedIn**: [linkedin.com/in/janlofre-dy](https://www.linkedin.com/in/janlofre-dy/)
 - **GitHub**: [github.com/janlofredy](https://github.com/janlofredy)
 - **Twitter / X**: [twitter.com/janlofredy](https://twitter.com/janlofredy)

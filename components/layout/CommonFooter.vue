@@ -29,7 +29,7 @@ const socials = [
             <!-- Middle: Subtle Support / Coffee Link -->
             <div class="flex items-center gap-2">
                 <a
-                    href="https://buymeacoffee.com/janlofredy"
+                    href="https://buymeacoffee.com/janlofredyx"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-dark-border bg-dark-surface/60 hover:border-amber-500/50 hover:bg-dark-surface text-xs font-mono text-slate-400 hover:text-amber-400 transition-colors"

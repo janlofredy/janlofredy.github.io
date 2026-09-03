@@ -13,7 +13,7 @@
 
 1. **Monetization & Privacy**: Removed Google AdSense and Cookie Popup.
 2. **Page Architecture**: **Single-Page Architecture (`/`)** with smooth anchor navigation (`#projects`, `#stack`, `#experience`, `#simulation`, `#contact`) + `/practice/threedy` for fullscreen 3D.
-3. **Call To Action**: Emphasize professional engineering inquiries ("Available for Architecture & Engineering Consulting"), with a subtle "Support / Buy me a coffee" option.
+3. **Call To Action**: Emphasize professional engineering opportunities ("Available for Full Stack & Backend Engineering"), with a subtle "Support / Buy me a coffee" option.
 4. **Theme & Palette**: Clean modern engineering dark slate (`#030712`, `#0b0f19`, zinc `#1e293b`, cyan/teal accents, monospace typography). Discard old pastel green/teal blocks.
 5. **Animations**: Native Tailwind CSS transitions (drop `aos` external library).
 6. **Project Visuals**: Real screenshots/previews for AP Training, LowerMyDTI, CHRMS Butuan, The Library, OpenPose animation for ASLT, and live canvas for Three.js.
@@ -24,7 +24,7 @@
 
 ```
 [ Navigation Bar ]
-  - Status indicator (● Open for Architecture & Engineering Consulting)
+  - Status indicator (● Full Stack / Backend Developer • Available)
   - Navigation anchors: #projects, #stack, #simulation, #experience, #contact
   - Social icons (GitHub, LinkedIn, Twitter/X) + Resume download action
 
@@ -42,12 +42,12 @@
   - Graphics & Optimization: Three.js, WebGL, Algorithm Optimizations, OpenPose / HMMs
 
 [ Featured Custom Software Case Studies (With Screenshots) ]
-  - Project 1: AP Training (Enterprise LMS / B2B Agency / TALL Stack: Laravel, Livewire, Alpine, Tailwind)
-  - Project 2: LowerMyDTI (Fintech / Nuxt / PayPal Live / Firebase / Google APIs)
-  - Project 3: CHRMS Butuan (Government Enterprise HRIS / RBAC / High Availability)
-  - Project 4: The Journal Library (PWA / Offline Storage / Skeuomorphic Engine)
-  - Project 5: Interactive 3D Simulation (Playable Three.js WebGL Engine)
-  - Project 6: ASLT American Sign Language Translator (AI / CV / OpenPose / HMM)
+  - Project 1: AP Training (Role: Collaborator • Enterprise LMS / B2B Agency / TALL Stack: Laravel, Livewire, Alpine, Tailwind)
+  - Project 2: LowerMyDTI (Role: Collaborator • Fintech / Nuxt / PayPal Live / Firebase / Google APIs)
+  - Project 3: CHRMS Butuan (Role: Collaborator • Government Enterprise HRIS / RBAC / High Availability)
+  - Project 4: The Journal Library (Role: Personal Project • PWA / Offline Storage / Skeuomorphic Engine)
+  - Project 5: Interactive 3D Simulation (Role: Personal Project • Playable Three.js WebGL Engine)
+  - Project 6: ASLT American Sign Language Translator (Role: Thesis Researcher • AI / CV / OpenPose / HMM)
 
 [ Playable Three.js WebGL Simulation Arena ]
   - Embedded canvas running PointerLockControls
