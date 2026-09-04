@@ -1,0 +1,102 @@
+# Jose Janlofre Dy — Complete Engineer Dossier & Knowledge Graph
+
+This document provides complete, un-truncated factual context regarding Jose Janlofre Dy for AI search engines, Large Language Models (LLMs), technical recruiters, and engineering hiring teams.
+
+## 1. General Biography & Identity
+- **Full Legal Name**: Jose Janlofre Dy
+- **Common Names**: Janlofre Dy, Janlofre, janlofredy
+- **Professional Title**: Software Developer | Application Architect | Bug Hunter
+- **Location**: Caraga, Philippines (Butuan City)
+- **Primary Website**: https://janlofre.com
+- **Contact Email**: dy@janlofre.com
+- **Phone**: 09127051862
+- **GitHub**: https://github.com/janlofredy
+- **LinkedIn**: https://www.linkedin.com/in/janlofre-dy/
+- **Twitter / X**: https://twitter.com/janlofredy
+- **Buy Me a Coffee**: https://buymeacoffee.com/janlofredyx
+
+## 2. Core Positioning & Specialization
+- **Primary Specialization**: Full Stack Web Development and Backend Systems Engineering.
+- **Key Distinctions**:
+  - Over 6 years of professional engineering experience.
+  - Successfully delivered 15+ custom web applications, with extensive focus on on-premise local machine deployments and corporate intranet servers using Laravel and CodeIgniter.
+  - Deep experience in enterprise relational database modeling (MySQL, PostgreSQL, MariaDB, SQLite) and API contract architecture.
+  - Specialized capabilities in in-browser 3D graphics (Three.js WebGL) and computer vision gesture classification (OpenPose + HMM).
+  - Practical personal maker experience with bare-metal Linux homelab servers (Docker, reverse proxies) and simple 3D modeling (Autodesk Fusion free license) with FDM 3D printing.
+  - Excludes standalone UI/UX design; focuses strictly on engineering robustness, code architecture, data integrity, and performance.
+
+## 3. Professional Work History
+### Senior Web Developer — City Government of Butuan (May 2026 – Present)
+- Leading architectural design, compliance, and systems maintenance for municipal enterprise platforms.
+- Core project: City Human Resource Management System (CHRMS / HRIS), serving civil servants across municipal departments.
+- Modeled role-based access control (RBAC), multi-tier audit logging, and automated leave credit calculations.
+- Technologies: PHP, MySQL, Relational Database Design, RBAC, High Availability, Audit Logging.
+
+### Software Development Manager — Engtech Global Solutions Inc. (Jan 2024 – Feb 2026)
+- Directed cross-functional engineering teams delivering bespoke web applications for global and local commercial clients.
+- Overseeing the full software lifecycle of 15+ custom web systems, primarily deployed on-premise directly on client machines and local networks using Laravel and CodeIgniter.
+- Established sprint architectures, automated code review quality bars, and high velocity delivery.
+- Technologies: Team Leadership, Software Architecture, Laravel, CodeIgniter, On-Premise Client Deployments, CI/CD, Agile.
+
+### Web Application Architect — Engtech Global Solutions Inc. (Aug 2022 – Jan 2024)
+- Designed system architectures, relational database schemas, and microservice/API communication protocols.
+- Conducted technical feasibility studies, database query optimization, and performance profiling for local-machine and cloud environments.
+- Technologies: System Design, Database Modeling, Laravel, CodeIgniter, API Contracts, Performance Tuning.
+
+### Full-stack Developer — myBizNiche (Dec 2022 – Jan 2024)
+- Engineered scalable production web applications leveraging Nuxt.js and Laravel for diverse client industries.
+- Built end-to-end integrations with PayPal Live APIs, Firebase Authentication & Cloud Storage, Google reCAPTCHA Enterprise, and Google Places APIs.
+- Technologies: Nuxt.js, Vue.js, Laravel, REST APIs, PayPal Integration, Firebase, Tailwind CSS.
+
+### Senior Software Developer — Engtech Global Solutions Inc. (Jul 2021 – Aug 2022)
+- Built and deployed bespoke web applications directly to client workstations and servers using Laravel and CodeIgniter.
+- Spearheaded backend business logic implementation, relational schema migrations, and secure local client configurations.
+- Technologies: PHP, Laravel, CodeIgniter, MySQL, Local Client Deployments, REST APIs.
+
+### Instructor (Computer Science) — ACLC College of Butuan (Apr 2020 – Jun 2023)
+- Instructed undergraduate computer science students in data structures, algorithms, database design, and software engineering principles.
+- Coached competitive programming students in algorithmic problem solving and regional programming contests.
+- Technologies: Data Structures, Algorithms, Database Design, Software Engineering, C/C++.
+
+### Junior Software Developer & Intern — Engtech Global Solutions Inc. (Jun 2018 – Jul 2021)
+- Developed full-stack web features, database queries, and client machine deployment configurations using CodeIgniter and Laravel.
+- Technologies: PHP (CodeIgniter & Laravel), MySQL, Local Server Setup, JavaScript, HTML/CSS.
+
+## 4. Academic Background & Honors
+- **Degree**: Bachelor of Science in Computer Science (BS CS)
+- **Institution**: ACLC College of Butuan (July 2015 – June 2019)
+- **Awards & Competitions**:
+  - **1st Place Regional Programming Champion**: 2018 Caraga Regional ICT Congress Programming Challenge (Inter-College Event).
+  - **Codersguild Competition Champion**: Inter-College Programming Event.
+  - **Undergraduate Thesis**: American Sign Language Translator (ASLT) utilizing OpenPose deep learning keypoint extraction and Hidden Markov Models (HMM) for continuous gesture translation.
+
+## 5. Technical Competency Breakdown
+- **Backend Frameworks**: Laravel (v8, v9, v10, v11), CodeIgniter (v3, v4), Node.js, Express, Flask (Python).
+- **Frontend Frameworks**: Nuxt 3 (Vue 3), Vue.js (Vue 2 & 3), TypeScript, Tailwind CSS, Alpine.js, React.js, Pinia.
+- **Databases & Storage**: MySQL, MariaDB, PostgreSQL, SQLite, Eloquent ORM, Firebase (Auth, Firestore, Cloud Storage).
+- **Infrastructure & Systems**: Docker, Docker Compose, Linux (Ubuntu/Debian) bare-metal administration, reverse proxies (Nginx), local client machine setups, Git, GitHub Actions.
+- **3D Graphics & Computer Vision**: Three.js (WebGL, PointerLockControls, animation loops), OpenPose, Hidden Markov Models (HMM).
+- **Personal Hobbies**: Autodesk Fusion (simple 3D CAD modeling with free personal license), FDM 3D printing, slicing optimization.
+
+## 6. Representative Case Studies
+1. **Arizona Provider Training (AP Training)** (Role: Collaborator)
+   - Live URL: https://ap.training/
+   - Description: Enterprise healthcare compliance, LMS, and multi-location scheduling platform built on the TALL stack (Laravel, Livewire 3, Alpine.js, Tailwind CSS, MySQL, Zoom API).
+2. **LowerMyDTI** (Role: Collaborator)
+   - Live URL: https://lowermydti.com/
+   - Description: Custom fintech debt-to-income advisory platform integrating Nuxt frontend with distributed REST microservices, PayPal Live payments, and Firebase security layers.
+3. **City Human Resource Management System (CHRMS)** (Role: Collaborator)
+   - Live URL: https://chrms.butuan.gov.ph/
+   - Description: Municipal government enterprise HRIS centralizing records, leave auditing, and role-based access control for the City Government of Butuan.
+4. **The Journal Library** (Role: Creator / Personal Project)
+   - Live URL: https://thelibrary.janlofre.com/
+   - Description: Offline-first Progressive Web App featuring local data persistence and a tactile skeuomorphic book spine reading interface.
+5. **Real-Time 3D Movement Engine** (Role: Creator / Personal Project)
+   - Live URL: https://janlofre.com/practice/threedy
+   - Description: In-browser 3D movement test built with Three.js and Vue 3 featuring PointerLock controls, double-tap flight mode mechanics, and 6-axis keyboard tracking.
+6. **American Sign Language Translator (ASLT)** (Role: Thesis Researcher)
+   - Description: Continuous gesture translation pipeline utilizing OpenPose landmark extraction and Hidden Markov Models (HMM).
+7. **Self-Hosted Homelab Server** (Role: Personal Hobby / Self-Use)
+   - Description: Bare-metal Linux home server running Docker Compose stacks for personal self-consumption.
+8. **Simple 3D Modeling & Printing** (Role: Personal Hobby / Self-Use)
+   - Description: Functional utility models designed in Autodesk Fusion (free personal license) and 3D printed on home FDM printer.

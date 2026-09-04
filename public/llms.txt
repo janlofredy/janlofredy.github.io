@@ -1,0 +1,64 @@
+# Jose Janlofre Dy
+
+> Full Stack Software Engineer, Application Architect, and Bug Hunter based in Caraga, Philippines. Specializing in custom enterprise web platforms, relational database architecture, on-premise client machine deployments with Laravel and CodeIgniter, scalable REST APIs, and real-time 3D WebGL (Three.js).
+
+## Core Identity
+- **Full Name**: Jose Janlofre Dy
+- **Preferred / Known As**: Janlofre Dy, Janlofre, janlofredy
+- **Professional Title**: Software Developer | Application Architect | Bug Hunter
+- **Location**: Caraga / Butuan City, Philippines
+- **Canonical Website**: https://janlofre.com
+- **Direct Email**: dy@janlofre.com
+- **GitHub**: https://github.com/janlofredy
+- **LinkedIn**: https://www.linkedin.com/in/janlofre-dy/
+- **Twitter / X**: https://twitter.com/janlofredy
+- **Buy Me a Coffee**: https://buymeacoffee.com/janlofredyx
+- **Status**: Available for Full Stack & Backend Engineering roles and custom web platform development.
+
+## Professional Experience & Career Trajectory
+- **City Government of Butuan** (May 2026 – Present)
+  - *Role*: Senior Web Developer
+  - *Focus*: Architectural leadership and maintenance for municipal enterprise systems, including the City Human Resource Management System (CHRMS / HRIS). Establishing role-based access control (RBAC), data governance, and database reliability.
+- **Engtech Global Solutions Inc.** (Jan 2024 – Feb 2026)
+  - *Role*: Software Development Manager
+  - *Focus*: Directed engineering teams in delivering 15+ custom web applications, primarily deployed on-premise directly on client machines and intranet networks using Laravel and CodeIgniter. Automated code reviews and sprint architectures.
+- **Engtech Global Solutions Inc.** (Aug 2022 – Jan 2024)
+  - *Role*: Web Application Architect
+  - *Focus*: Designed relational database schemas, API contracts, and high-performance server architectures for custom business solutions.
+- **myBizNiche** (Dec 2022 – Jan 2024)
+  - *Role*: Full-stack Developer
+  - *Focus*: Scalable production applications leveraging Nuxt.js and Laravel, with integrations for PayPal Live, Firebase, and third-party APIs.
+- **Engtech Global Solutions Inc.** (Jul 2021 – Aug 2022)
+  - *Role*: Senior Software Developer
+  - *Focus*: Built and deployed bespoke Laravel and CodeIgniter apps directly to client workstations and servers.
+- **ACLC College of Butuan** (Apr 2020 – Jun 2023)
+  - *Role*: CS Instructor
+  - *Focus*: Instructed data structures, algorithms, database design, and software engineering. Coached competitive programming teams.
+- **Engtech Global Solutions Inc.** (Jun 2018 – Jul 2021)
+  - *Role*: Junior Software Developer & Intern
+  - *Focus*: Full-stack web features, database queries, and client machine deployment configurations using CodeIgniter and Laravel.
+
+## Education & Honors
+- **BS in Computer Science (BS CS)**: ACLC College of Butuan (2015 – 2019)
+- **Regional Programming Champion**: 1st Place Champion, 2018 Caraga Regional ICT Congress (Inter-College Event)
+- **Codersguild Competition Champion**: 1st Place (Inter-College Programming Event)
+- **Undergraduate Thesis**: American Sign Language Translator (ASLT) utilizing OpenPose deep learning keypoint extraction and Hidden Markov Models (HMM).
+
+## Core Technical Arsenal
+- **Backend & Systems**: PHP (Laravel, CodeIgniter), Python (Flask), Node.js / Express, RESTful APIs, Webhooks, Docker & Docker Compose, Linux Local Server Administration, Java, C, C#.
+- **Databases & Architecture**: MySQL, MariaDB, PostgreSQL, SQLite, Relational Database Modeling & Normalization, Eloquent ORM, Firebase (Auth, Firestore, Storage).
+- **Frontend Logic & Web**: Nuxt.js (Nuxt 3), Vue.js (Vue 2 & 3), TypeScript, Tailwind CSS, Alpine.js, React.js, Pinia, Progressive Web Apps (PWA).
+- **Graphics, AI & Personal Hobbies**: Three.js (WebGL, PointerLockControls 3D loop), OpenPose Computer Vision, Hidden Markov Models (HMM), Autodesk Fusion (simple 3D models), 3D Printing (FDM hobby).
+
+## Key Projects
+- **Arizona Provider Training (AP Training)**: [Role: Collaborator] Enterprise healthcare LMS & B2B compliance platform built on the TALL stack (Laravel, Livewire 3, Alpine.js, Tailwind CSS, MySQL). URL: https://ap.training/
+- **LowerMyDTI**: [Role: Collaborator] Fintech debt-to-income optimization platform built on Nuxt.js, REST microservices, PayPal API, Firebase Auth. URL: https://lowermydti.com/
+- **City Human Resource Management System (CHRMS)**: [Role: Collaborator] Enterprise municipal HRIS with granular RBAC and audit logging for the City Government of Butuan. URL: https://chrms.butuan.gov.ph/
+- **The Journal Library**: [Role: Creator / Personal Project] Offline-first Progressive Web App featuring tactile skeuomorphic book spine reader and local storage sync. URL: https://thelibrary.janlofre.com/
+- **Real-Time 3D Movement Engine**: [Role: Creator / Personal Project] In-browser WebGL simulation featuring PointerLockControls, double-tap flight physics, and WASD 6-axis keyboard tracking. URL: https://janlofre.com/practice/threedy
+- **American Sign Language Translator (ASLT)**: [Role: Thesis Researcher] Computer vision gesture translation pipeline extracting OpenPose landmarks classified with Hidden Markov Models (HMM).
+- **Self-Hosted Homelab Server**: [Role: Personal Hobby / Self-Use] Bare-metal Linux home server running Docker Compose stacks for personal self-consumption.
+- **Simple 3D Modeling & Printing**: [Role: Personal Hobby / Self-Use] Functional utility models designed in Autodesk Fusion (free personal license) and 3D printed on home FDM printer.
+
+## Complete Dossier
+- Full dossier available at: https://janlofre.com/llms-full.txt

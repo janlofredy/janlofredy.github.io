@@ -90,6 +90,17 @@ Personal engineering portfolio showcasing custom enterprise software, fintech ar
 
 ---
 
+## 🤖 AI Search & SEO Discoverability
+
+- **Sitemap**: [janlofre.com/sitemap.xml](https://janlofre.com/sitemap.xml)
+- **Robots Instructions**: [janlofre.com/robots.txt](https://janlofre.com/robots.txt)
+- **AI Agent Fact Sheet**: [janlofre.com/llms.txt](https://janlofre.com/llms.txt) (Standard for ChatGPT Search, Perplexity, Gemini & Claude)
+- **Comprehensive Engineer Dossier**: [janlofre.com/llms-full.txt](https://janlofre.com/llms-full.txt)
+- **Structured Data**: JSON-LD Schema (`Person`, `WebSite`, `ProfilePage`, `Occupation`) embedded for Google Knowledge Graph.
+- **Social Graph Card**: Open Graph and Twitter Card with custom 1200x630 banner.
+
+---
+
 ## 🛠️ Local Development & Build
 
 ```bash
