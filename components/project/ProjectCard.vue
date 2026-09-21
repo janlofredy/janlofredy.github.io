@@ -49,20 +49,22 @@ defineProps<{
             </div>
 
             <!-- Standard Project Screenshot with Architectural Fallback -->
-            <div v-else class="w-full h-full relative overflow-hidden bg-slate-950 flex items-center justify-center group-hover:scale-[1.01] transition-transform duration-300">
-                <!-- Fallback Schematic Pattern -->
-                <div class="absolute inset-0 bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
-
-                <img
-                    v-if="project.previewImage && !project.previewImage.startsWith('/images/')"
-                    :src="project.previewImage"
-                    :alt="project.title"
-                    class="max-h-24 max-w-[80%] object-contain relative z-10 drop-shadow-md"
-                    loading="lazy"
-                />
+            <div v-else class="w-full h-full relative overflow-hidden bg-slate-950 flex items-center justify-center">
+                <!-- Cached Open Graph / Project Preview Image -->
+                <template v-if="project.previewImage">
+                    <img
+                        :src="project.previewImage"
+                        :alt="project.title"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    />
+                    <!-- Subtle bottom gradient vignette to blend into card -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-surface/80 via-dark-surface/10 to-transparent pointer-events-none"></div>
+                </template>
 
                 <!-- Modern Architectural Card Fallback when local screenshot not yet stored -->
                 <div v-else class="relative z-10 flex flex-col items-center justify-center text-center p-6">
+                    <div class="absolute inset-0 bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
                     <div class="w-12 h-12 rounded border border-dark-border bg-dark-surface flex items-center justify-center text-accent-teal font-mono text-xs font-bold mb-2 shadow-inner">
                         <svg v-if="project.id === 'homelab-devops'" class="w-6 h-6 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />

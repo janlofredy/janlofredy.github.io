@@ -129,7 +129,7 @@ export const portfolioData = {
             techStack: ["Laravel", "Livewire 3", "Alpine.js", "Tailwind CSS", "MySQL", "Eloquent ORM", "Zoom API"],
             liveUrl: "https://ap.training/",
             badge: "Enterprise Production",
-            previewImage: "/images/projects/ap-training.webp",
+            previewImage: "/images/projects/ap-training.jpg",
         },
         {
             id: "lowermydti",
@@ -147,7 +147,7 @@ export const portfolioData = {
             techStack: ["Nuxt.js", "Vue.js", "REST Microservices", "PayPal API", "Firebase Auth", "reCAPTCHA Enterprise", "Google Maps API"],
             liveUrl: "https://lowermydti.com/",
             badge: "Fintech Platform",
-            previewImage: "https://lowermydti.com/images/lmd-login-logo.png",
+            previewImage: "/images/projects/lowermydti.jpg",
         },
         {
             id: "chrms-butuan",
@@ -165,7 +165,7 @@ export const portfolioData = {
             techStack: ["PHP", "MySQL", "Relational Database Design", "RBAC", "Enterprise Intranet", "Audit Logging"],
             liveUrl: "https://chrms.butuan.gov.ph/",
             badge: "Municipal Government",
-            previewImage: "/images/projects/chrms.webp",
+            previewImage: "/images/projects/chrms.jpg",
         },
         {
             id: "the-library",
@@ -183,7 +183,7 @@ export const portfolioData = {
             techStack: ["Vue.js", "TypeScript", "PWA / Service Workers", "Local Storage", "CSS Architecture"],
             liveUrl: "https://thelibrary.janlofre.com/",
             badge: "Interactive PWA",
-            previewImage: "/images/projects/the-library.webp",
+            previewImage: "/images/projects/the-library.jpg",
         },
         {
             id: "threejs-sim",
@@ -236,6 +236,7 @@ export const portfolioData = {
             ],
             techStack: ["Docker", "Docker Compose", "Linux / Ubuntu", "Self-Hosted", "Reverse Proxy", "Bash"],
             badge: "Personal Hobby",
+            previewImage: "/images/projects/docker.png",
         },
         {
             id: "cad-3d-printing",
@@ -252,6 +253,7 @@ export const portfolioData = {
             ],
             techStack: ["Autodesk Fusion (Free)", "3D Printing (FDM)", "Slicing Software", "Personal Hobby"],
             badge: "Personal Hobby",
+            previewImage: "/images/projects/autodesk-fusion.jpg",
         },
     ] as Project[],
 

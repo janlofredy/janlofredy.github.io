@@ -48,8 +48,9 @@
   - Project 4: The Journal Library (Role: Personal Project • PWA / Offline Storage / Skeuomorphic Engine)
   - Project 5: Interactive 3D Simulation (Role: Personal Project • Playable Three.js WebGL Engine)
   - Project 6: ASLT American Sign Language Translator (Role: Thesis Researcher • AI / CV / OpenPose / HMM)
-  - Project 7: Self-Hosted Homelab (Role: Personal Hobby / Self-Use • Docker, Docker Compose, Bare-Metal Linux, Reverse Proxy)
-  - Project 8: Simple 3D Modeling & Printing (Role: Personal Hobby / Self-Use • Autodesk Fusion Free License, Simple Models, FDM 3D Printing)
+  - Project 7: Self-Hosted Homelab (Role: Personal Hobby / Self-Use • Docker Site OG Image cached • Bare-Metal Linux, Reverse Proxy)
+  - Project 8: Simple 3D Modeling & Printing (Role: Personal Hobby / Self-Use • Autodesk Fusion OG Image cached • Free License, Simple Models, FDM 3D Printing)
+  - All featured project cards display full-bleed cached local Open Graph images (/images/projects/)
 
 [ Playable Three.js WebGL Simulation Arena ]
   - Embedded canvas running PointerLockControls

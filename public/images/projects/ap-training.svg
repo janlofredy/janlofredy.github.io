@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="aptBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18040a" />
+      <stop offset="50%" stop-color="#0f0206" />
+      <stop offset="100%" stop-color="#240610" />
+    </linearGradient>
+    <radialGradient id="roseGlow" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#be123c" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#be123c" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e11d48" stroke-width="0.8" stroke-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#aptBg)" />
+  <rect width="1200" height="630" fill="url(#roseGlow)" />
+  <rect width="1200" height="630" fill="url(#gridPattern)" />
+
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#be123c" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Brand Identity -->
+  <g transform="translate(100, 140)">
+    <!-- Logo Badge -->
+    <rect x="0" y="0" width="100" height="100" rx="20" fill="#be123c" />
+    <!-- White Medical Cross & Book -->
+    <path d="M 50 25 L 50 75 M 25 50 L 75 50" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Title Lockup -->
+    <text x="130" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Arizona Provider Training</text>
+    <text x="130" y="82" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="600" fill="#fb7185">ENTERPRISE HEALTHCARE LMS &amp; B2B E-COMMERCE</text>
+  </g>
+
+  <!-- Value Proposition -->
+  <text x="100" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">
+    State-Mandated Healthcare Training, Scheduling &amp; Certification
+  </text>
+  <text x="100" y="365" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#94a3b8">
+    Livewire 3 interactive course catalog, multi-facility classroom dispatching, and corporate B2B compliance rosters.
+  </text>
+
+  <!-- Architecture Highlights Badges -->
+  <g transform="translate(100, 430)">
+    <rect x="0" y="0" width="180" height="42" rx="8" fill="#2d0612" stroke="#be123c" stroke-width="1" />
+    <circle cx="24" cy="21" r="5" fill="#f43f5e" />
+    <text x="38" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#fecdd3">Laravel &amp; TALL</text>
+
+    <rect x="196" y="0" width="220" height="42" rx="8" fill="#2d0612" stroke="#be123c" stroke-width="1" />
+    <circle cx="220" cy="21" r="5" fill="#f43f5e" />
+    <text x="234" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#fecdd3">Livewire 3 &amp; Alpine</text>
+
+    <rect x="432" y="0" width="230" height="42" rx="8" fill="#2d0612" stroke="#be123c" stroke-width="1" />
+    <circle cx="456" cy="21" r="5" fill="#f43f5e" />
+    <text x="470" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#fecdd3">Multi-Facility Dispatch</text>
+
+    <rect x="678" y="0" width="210" height="42" rx="8" fill="#2d0612" stroke="#be123c" stroke-width="1" />
+    <circle cx="702" cy="21" r="5" fill="#f43f5e" />
+    <text x="716" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#fecdd3">B2B Agency Portal</text>
+  </g>
+
+  <!-- Live Link -->
+  <text x="100" y="540" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#fb7185">ap.training &#8226; Live Healthcare LMS</text>
+</svg>

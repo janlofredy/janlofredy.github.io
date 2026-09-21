@@ -7,7 +7,7 @@ const jsonLdSchema = {
             "name": "Jose Janlofre Dy",
             "alternateName": ["Janlofre Dy", "Janlofre", "janlofredy"],
             "url": "https://janlofre.com",
-            "image": "https://janlofre.com/og-image.png",
+            "image": "https://janlofre.com/og-image.jpg",
             "jobTitle": "Full Stack Software Engineer & Application Architect",
             "email": "dy@janlofre.com",
             "worksFor": {
@@ -89,6 +89,7 @@ const jsonLdSchema = {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: false,
+    telemetry: false,
     modules: [
         "@nuxtjs/tailwindcss",
         "@pinia/nuxt",
@@ -100,6 +101,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: "en",
                 class: "dark scroll-smooth",
+                prefix: "og: https://ogp.me/ns# fb: https://ogp.me/ns/fb#",
             },
             meta: [
                 { charset: "utf-8" },
@@ -132,10 +134,10 @@ export default defineNuxtConfig({
                     property: "og:description",
                     content: "Software Developer & Application Architect specializing in custom enterprise platforms, Laravel, CodeIgniter, Nuxt 3, scalable REST APIs, and real-time 3D WebGL.",
                 },
-                { property: "og:url", content: "https://janlofre.com" },
-                { property: "og:image", content: "https://janlofre.com/og-image.png" },
-                { property: "og:image:secure_url", content: "https://janlofre.com/og-image.png" },
-                { property: "og:image:type", content: "image/png" },
+                { property: "og:url", content: "https://janlofre.com/" },
+                { property: "og:image", content: "https://janlofre.com/og-image.jpg" },
+                { property: "og:image:secure_url", content: "https://janlofre.com/og-image.jpg" },
+                { property: "og:image:type", content: "image/jpeg" },
                 { property: "og:image:width", content: "1200" },
                 { property: "og:image:height", content: "630" },
                 { property: "og:image:alt", content: "Jose Janlofre Dy — Software Developer & Application Architect Portfolio Preview" },
@@ -147,7 +149,7 @@ export default defineNuxtConfig({
                 // Twitter / X Cards
                 { name: "twitter:card", content: "summary_large_image" },
                 { name: "twitter:domain", content: "janlofre.com" },
-                { name: "twitter:url", content: "https://janlofre.com" },
+                { name: "twitter:url", content: "https://janlofre.com/" },
                 { name: "twitter:site", content: "@janlofredy" },
                 { name: "twitter:creator", content: "@janlofredy" },
                 { name: "twitter:title", content: "Jose Janlofre Dy | Full Stack & Backend Developer" },
@@ -155,14 +157,14 @@ export default defineNuxtConfig({
                     name: "twitter:description",
                     content: "Software Developer & Application Architect specializing in custom enterprise platforms, Laravel, CodeIgniter, Nuxt 3, scalable REST APIs, and 3D WebGL.",
                 },
-                { name: "twitter:image", content: "https://janlofre.com/og-image.png" },
+                { name: "twitter:image", content: "https://janlofre.com/og-image.jpg" },
                 { name: "twitter:image:alt", content: "Jose Janlofre Dy — Software Developer & Application Architect Portfolio Preview" },
             ],
             link: [
                 { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
                 { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
                 { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-                { rel: "canonical", href: "https://janlofre.com" },
+                { rel: "canonical", href: "https://janlofre.com/" },
                 { rel: "author", href: "https://janlofre.com/llms.txt" },
                 { rel: "sitemap", type: "application/xml", href: "https://janlofre.com/sitemap.xml" },
                 { rel: "preconnect", href: "https://fonts.googleapis.com" },

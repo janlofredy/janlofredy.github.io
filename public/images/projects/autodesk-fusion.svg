@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="fusionBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d14" />
+      <stop offset="60%" stop-color="#111722" />
+      <stop offset="100%" stop-color="#1a130e" />
+    </linearGradient>
+    <radialGradient id="orangeGlow" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff6b00" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ff6b00" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="isoGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#334155" stroke-width="0.8" stroke-opacity="0.3" />
+    </pattern>
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9548" />
+      <stop offset="100%" stop-color="#ff7e24" />
+    </linearGradient>
+    <linearGradient id="cubeFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b00" />
+      <stop offset="100%" stop-color="#e05500" />
+    </linearGradient>
+    <linearGradient id="cubeSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b84600" />
+      <stop offset="100%" stop-color="#803000" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#fusionBg)" />
+  <rect width="1200" height="630" fill="url(#orangeGlow)" />
+  <rect width="1200" height="630" fill="url(#isoGrid)" />
+
+  <!-- Outer Framing -->
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6" />
+
+  <!-- Left: Official Autodesk Fusion Branding Lockup -->
+  <!-- 3D Cube Icon -->
+  <g transform="translate(100, 150)">
+    <!-- 3D Cube Perspective -->
+    <!-- Front Face -->
+    <path d="M 40 50 L 110 50 L 110 130 L 40 130 Z" fill="url(#cubeFront)" />
+    <!-- Top Face -->
+    <path d="M 40 50 L 80 15 L 150 15 L 110 50 Z" fill="url(#cubeTop)" />
+    <!-- Right Face -->
+    <path d="M 110 50 L 150 15 L 150 95 L 110 130 Z" fill="url(#cubeSide)" />
+    <!-- White Letter 'F' on Front Face -->
+    <path d="M 58 68 L 92 68 L 92 78 L 72 78 L 72 88 L 88 88 L 88 98 L 72 98 L 72 118 L 58 118 Z" fill="#ffffff" />
+    
+    <!-- Lockup Text -->
+    <text x="180" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="4">AUTODESK</text>
+    <text x="180" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">Fusion</text>
+  </g>
+
+  <!-- Product Tagline & Capabilities -->
+  <text x="100" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">
+    Integrated 3D CAD, CAM, CAE &amp; PCB Design Software
+  </text>
+  <text x="100" y="385" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#94a3b8">
+    Design simple functional models, parametric mechanical prototypes, and prepare models for 3D printing.
+  </text>
+
+  <!-- Capability Badges -->
+  <g transform="translate(100, 440)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="220" height="42" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <circle cx="24" cy="21" r="5" fill="#ff6b00" />
+    <text x="38" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#f1f5f9">Parametric CAD</text>
+
+    <!-- Badge 2 -->
+    <rect x="236" y="0" width="250" height="42" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <circle cx="260" cy="21" r="5" fill="#ff6b00" />
+    <text x="274" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#f1f5f9">FDM 3D Prototyping</text>
+
+    <!-- Badge 3 -->
+    <rect x="502" y="0" width="220" height="42" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <circle cx="526" cy="21" r="5" fill="#ff6b00" />
+    <text x="540" y="27" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#f1f5f9">Personal License</text>
+  </g>
+
+  <!-- Right: CAD Isometric Wireframe Illustration -->
+  <g transform="translate(870, 260)" stroke="#ff6b00" stroke-width="1.8" fill="none" opacity="0.85">
+    <!-- Isometric Cube 1 -->
+    <polygon points="0,-80 70,-40 70,40 0,0" stroke="#ff9548" />
+    <polygon points="0,-80 -70,-40 0,0 70,-40" stroke="#ffb27d" fill="#ff6b00" fill-opacity="0.1" />
+    <polygon points="0,0 -70,-40 -70,40 0,80" stroke="#e05500" />
+    <polygon points="0,80 70,40 70,-40 0,0" stroke="#ff6b00" />
+
+    <!-- Technical Dimension Axis Lines -->
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#64748b" stroke-dasharray="4,4" />
+    <line x1="0" y1="0" x2="120" y2="-60" stroke="#64748b" stroke-dasharray="4,4" />
+    <line x1="0" y1="0" x2="-120" y2="-60" stroke="#64748b" stroke-dasharray="4,4" />
+    <text x="130" y="-55" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" stroke="none">X</text>
+    <text x="-140" y="-55" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" stroke="none">Y</text>
+    <text x="-5" y="140" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" stroke="none">Z</text>
+  </g>
+
+  <!-- Bottom Brand Footnote -->
+  <text x="100" y="550" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748b">autodesk.com/products/fusion-360 &#8226; 3D Modeling &amp; Rapid Manufacturing</text>
+</svg>
