@@ -26,29 +26,7 @@ defineProps<{
                 </div>
             </div>
 
-            <!-- Three.js Simulation Banner -->
-            <div v-else-if="project.isSimulation" class="w-full h-full relative flex flex-col items-center justify-center bg-gradient-to-br from-dark-surface via-slate-900 to-dark-base p-6 text-center">
-                <div class="w-14 h-14 rounded-xl border border-accent-teal/40 bg-accent-teal/10 flex items-center justify-center mb-3 text-accent-teal">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                </div>
-                <div class="font-mono text-sm font-semibold text-slate-100">
-                    Interactive 3D WebGL Arena
-                </div>
-                <div class="font-mono text-xs text-slate-400 mt-1 max-w-sm">
-                    First-Person PointerLock, WASD movement & flight mechanics
-                </div>
-                <a
-                    href="#simulation"
-                    class="mt-3 px-3 py-1 rounded bg-dark-surface border border-accent-teal/50 hover:bg-accent-teal hover:text-dark-base font-mono text-xs text-accent-teal transition-all flex items-center gap-1"
-                >
-                    <span>Scroll to Live Sandbox</span>
-                    <span>&darr;</span>
-                </a>
-            </div>
-
-            <!-- Standard Project Screenshot with Architectural Fallback -->
+            <!-- Standard Project Screenshot / OG Banner with Architectural Fallback -->
             <div v-else class="w-full h-full relative overflow-hidden bg-slate-950 flex items-center justify-center">
                 <!-- Cached Open Graph / Project Preview Image -->
                 <template v-if="project.previewImage">
@@ -82,17 +60,20 @@ defineProps<{
                     </span>
                 </div>
 
-                <!-- Live URL pill overlay -->
+                <!-- Live URL / Sandbox pill overlay -->
                 <a
-                    v-if="project.liveUrl && !project.isSimulation"
-                    :href="project.liveUrl"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    v-if="project.liveUrl"
+                    :href="project.isSimulation ? '#simulation' : project.liveUrl"
+                    :target="project.isSimulation ? undefined : '_blank'"
+                    :rel="project.isSimulation ? undefined : 'noopener noreferrer'"
                     class="absolute top-3 right-3 z-20 px-2.5 py-1 rounded bg-dark-surface/90 backdrop-blur border border-dark-border text-[11px] font-mono text-slate-300 hover:text-accent-teal hover:border-accent-teal transition-colors flex items-center gap-1 shadow-sm"
                 >
-                    <span>Visit Live</span>
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span>{{ project.isSimulation ? 'Play Sandbox' : 'Visit Live' }}</span>
+                    <svg v-if="!project.isSimulation" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <svg v-else class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
                 </a>
             </div>

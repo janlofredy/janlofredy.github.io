@@ -202,6 +202,7 @@ export const portfolioData = {
             liveUrl: "/practice/threedy",
             badge: "Playable WebGL",
             isSimulation: true,
+            previewImage: "/images/projects/threejs.jpg",
         },
         {
             id: "aslt",
